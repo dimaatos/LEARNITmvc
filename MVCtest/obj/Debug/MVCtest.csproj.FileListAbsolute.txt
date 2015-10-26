@@ -192,4 +192,3 @@
 \\Mac\Home\Desktop\LEARNITmvc\MVCtest\bin\System.Web.Mvc.xml
 \\Mac\Home\Desktop\LEARNITmvc\MVCtest\obj\Debug\MVCtest.dll
 \\Mac\Home\Desktop\LEARNITmvc\MVCtest\obj\Debug\MVCtest.pdb
-\\Mac\Home\Desktop\LEARNITmvc\MVCtest\obj\Debug\MVCtest.csprojResolveAssemblyReference.cache

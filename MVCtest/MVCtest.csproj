@@ -135,6 +135,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\BrowseCatalogController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -157,6 +158,8 @@
     <Content Include="Views\BrowseCatalog\PhysicsAndEngeneering.cshtml" />
     <Content Include="Views\BrowseCatalog\SocialScience.cshtml" />
     <Content Include="Views\Shared\_LayoutMainPage.cshtml" />
+    <Content Include="Views\Shared\_LayoutForUser.cshtml" />
+    <Content Include="Views\User\UserPage.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
