@@ -1,0 +1,128 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Bootstrap Core CSS -->
+    <link href="~/Content/bootstrap.css" rel="stylesheet">
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet">
+
+
+    <!-- Custom CSS -->
+    <link href="~/Content/stylish-portfolio.css" rel="stylesheet">
+
+
+    <!-- Custom Fonts -->
+    <link href="~/fonts/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Lato:100' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Josefin+Sans' rel='stylesheet' type='text/css'>
+
+</head>
+
+<body>
+
+    <!-- Fixed top Navigation -->
+    <a id="menu-toggle" href="#" class="btn btn-dark btn-lg toggle"><i class="fa fa-bars"></i></a>
+    <a id="menu" class="sign-up-btn" data-toggle="modal" data-target="#form-content"><i></i>Sign Up</a>
+    <a id="menu" class="sign-in-btn" data-toggle="modal" data-target="#log-in-content"><i></i>Sign In</a>
+    <!-- End of fixed top Navigation -->
+
+    <nav id="sidebar-wrapper" class="bar">
+        <ul class="sidebar-nav">
+            <a id="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle"><i class="fa fa-times"></i></a>
+            <li class="sidebar-brand">
+              <a href="#top" onclick=$("#menu-close").click();>LEARNIT</a>
+            </li>
+            <li>
+                <a href="index.html" onclick=$("#menu-close").click();>Home</a>
+            </li>
+            <li>
+                <a href="#about" onclick=$("#menu-close").click();>About</a>
+            </li>
+            <li>
+                <a href="#services" onclick=$("#menu-close").click();>Browse Catalog</a>
+            </li>
+            <li>
+                <a href="index.html" onclick=$("#menu-close").click();>Contacts</a>
+            </li>
+        </ul>
+    </nav>
+    <!-- end Static right menu -->
+
+
+    <div id="form-content" class="modal fade" style="display: none;">
+        <div class="modal-header">
+            <a class="close" data-dismiss="modal">×</a>
+            <h3 id="sendUs">Sign Up!</h3>
+        </div>
+        <div class="modal-body">
+            <form class="contact" name="contact">
+
+                <label id="myLabel" class="label" for="name">Pick up a username</label><br>
+                <input type="text" name="name" class="form-control"><br>
+
+                <label id="myLabel" class="label" for="email">Your email</label><br>
+                <input type="email" name="email" class="form-control"><br>
+
+                <label id="myLabel" class="label" for="email">Create a password</label><br>
+                <input input type="password" class="form-control" id="pwd"><br>
+            </form>
+        </div>
+        <div class="modal-footer">
+            <input class="btn btn-success" type="submit" value="Sing Up!" id="submit">
+            <a href="#" id="cancelbt" class="btn" data-dismiss="modal">Cancel</a>
+        </div>
+    </div>
+
+
+    <!-- Modals -->
+    <div id="log-in-content" class="modal fade" style="display: none;">
+        <div class="modal-header">
+            <a class="close" data-dismiss="modal">×</a>
+            <h3 id="sendUs">Sign in</h3>
+        </div>
+        <div class="modal-body">
+            <form class="contact" name="contact">
+
+                <label id="myLabel" class="label" for="name">Username</label><br>
+                <input type="text" name="name" class="form-control"><br>
+                <label id="myLabel" class="label" for="email">Password</label><br>
+                <input input type="password" class="form-control" id="pwd"><br>
+            </form>
+        </div>
+        <div class="modal-footer">
+            <input class="btn btn-success" type="submit" value="Sing Up!" id="submit">
+            <a href="#" id="cancelbt" class="btn" data-dismiss="modal">Cancel</a>
+        </div>
+    </div>
+
+    <!-- end of modal -->
+
+    @RenderBody();
+
+  
+
+    <!-- jQuery -->
+    <script src="~/Scripts/jquery-2.1.4.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="~/Scripts/bootstrap.min.js"></script>
+
+    <!-- Customs JavaScript -->
+    <script src="~/Scripts/myscripts.js"></script>
+
+</body>
+
+</html>
+

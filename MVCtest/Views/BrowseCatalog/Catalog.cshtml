@@ -1,0 +1,35 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "BROWSE CATALOG";
+}
+    <!-- Header contents -->
+    <header class="header-catal">
+        <div class="main-cont">
+            <div class="catalog-list-div">
+                @Html.ActionLink("Humanities and Fine Art", "HunanitiesAndFineArt", "BrowseCatalog", new { @class = "categories-links" })
+                @Html.ActionLink("Business", "business", "BrowseCatalog", new { @class = "categories-links" })
+                @Html.ActionLink("Computer Science", "ComputerScience", "BrowseCatalog", new { @class = "categories-links" })
+                @Html.ActionLink("Medicine And Biology", "MedicineAndBiology", "BrowseCatalog", new { @class = "categories-links" })
+                @Html.ActionLink("Maths And logic", "MathsAndlogic", "BrowseCatalog", new { @class = "categories-links" })
+                @Html.ActionLink("Physics And Engeneering", "PhysicsAndEngeneering", "BrowseCatalog", new { @class = "categories-links" })
+                @Html.ActionLink("Social Science", "SocialScience", "BrowseCatalog", new { @class = "categories-links" })
+            </div>
+        </div>
+    </header>
+    <!-- end of header content -->
+    <!-- footer -->
+    <footer>
+        <div style="cursor: default" class="col-lg-10 col-lg-offset-1 text-center" id="catal-footer">
+            <h2>
+                <a href="index.html" style="text-decoration: none;">LEARNIT</a>
+                </h2>
+                <p>Moscow Kremlin<br>Russia</p>
+                <ul class="list-unstyled">
+                    <li>
+                        <i class="fa fa-envelope-o fa-fw"></i>  <a style="text-decoration: none" href="mailto:vera_khatskevich@yahoo.com">vera_khatskevich@yahoo.com</a>
+                    </li>
+                </ul>
+                <hr>
+                <p class="text-muted">Copyright LEARNIT 2015</p>
+        </div>
+    </footer>

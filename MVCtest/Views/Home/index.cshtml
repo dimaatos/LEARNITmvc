@@ -1,0 +1,59 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "BROWSE CATALOG";
+}
+
+
+
+
+    
+   @Html.ActionLink("LEARNIT", "Index", "Home", new { @id = "logo-menu" })
+
+    <!-- Header -->
+    <header id="main-header" class="header">
+        <div class="text-vertical-center">
+            <div class="main-cont" style="cursor: default;">
+                <h1>LEARN WITH US</h1>
+                <h2>Get knowledge, make friends, be a master.</h2>
+                <span id="hello">
+                    <input type="text" class="  search-query form-control" placeholder="What would you like to learn?" autocomplete="off" spellcheck="false" dir="auto" />
+                 
+                </span>
+                <h3 class="browse-catalog-container">
+                    <span>or</span>
+                    <a class="browse-catalog-link" href="catalog.html"><span>@Html.ActionLink("Browse Catalog.", "Catalog", "BrowseCatalog")</span>
+                </a>
+                </h3>
+            </div>
+        </div>
+    </header>
+
+
+   <footer>
+    <hr />
+    <div class="col-lg-10 col-lg-offset-1 text-center">
+        <h2>
+            LEARNIT
+        </h2>
+        <p>Moscow Kremlin<br>Russia</p>
+        <ul class="list-unstyled" id="contacts-mark">
+            <li>
+                <i class="fa fa-envelope-o fa-fw"></i>  <a href="mailto:vera_khatskevich@yahoo.com">vera_khatskevich@yahoo.com</a>
+            </li>
+        </ul>
+        <br>
+        <ul class="list-inline">
+            <li>
+                <a href="https://www.facebook.com/vera.khatskevich1"><i class="fa fa-facebook fa-fw fa-3x"></i></a>
+            </li>
+            <li>
+                <a href="user_page.html"><i class="fa fa-twitter fa-fw fa-3x"></i></a>
+            </li>
+            <li>
+                <a href="https://www.github.com/verakh"><i class="fa fa-dribbble fa-fw fa-3x"></i></a>
+            </li>
+        </ul>
+        <hr class="small">
+        <p class="text-muted">Copyright LEARNIT 2015</p>
+    </div>
+</footer>
