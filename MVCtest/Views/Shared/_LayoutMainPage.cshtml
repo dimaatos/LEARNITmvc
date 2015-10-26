@@ -41,15 +41,21 @@
 
     <nav id="sidebar-wrapper" class="bar">
         <ul class="sidebar-nav">
-            <a id="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle"></a>
+            <a id="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle"><i class="fa fa-times"></i></a>
             <li class="sidebar-brand">
-                @Html.ActionLink("LEARNIT", "Index", "Home")
+              <a href="#top" onclick=$("#menu-close").click();>LEARNIT</a>
             </li>
             <li>
-                @Html.ActionLink("Browse Catalog", "Catalog", "BrowseCatalog")
+                <a href="#top" onclick=$("#menu-close").click();>Home</a>
             </li>
             <li>
-                @Html.ActionLink("LEARNIT", "Index", "Home")
+                <a href="#about" onclick=$("#menu-close").click();>About</a>
+            </li>
+            <li>
+                <a href="#services" onclick=$("#menu-close").click();>Browse Catalog</a>
+            </li>
+            <li>
+                <a href="#contacts-mark" onclick=$("#menu-close").click();>Contacts</a>
             </li>
         </ul>
     </nav>

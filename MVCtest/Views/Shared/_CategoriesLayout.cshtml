@@ -3,8 +3,11 @@
     ViewBag.Title = "BROWSE CATALOG";
 }
 
-<a id="logo-menu" class="logo-catal" href="index.html">LEARNIT</a>
+
 <!-- Header contents -->
+
+
+@Html.ActionLink("LEARNIT", "Index", "Home", null, new { @class = "logo-catal", @id = "logo-menu" })
 
     @RenderBody();
 
@@ -13,7 +16,7 @@
 <footer>
     <div style="cursor: default" class="col-lg-10 col-lg-offset-1 text-center" id="catal-footer">
         <h2>
-            <a href="index.html" style="text-decoration: none;">LEARNIT</a>
+            @Html.ActionLink("LEARNIT", "Index", "Home", null, new { @style = "text-decoration:none;" })
         </h2>
         <p>Moscow Kremlin<br>Russia</p>
         <ul class="list-unstyled">

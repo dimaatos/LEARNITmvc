@@ -1,15 +1,11 @@
 ﻿@{
-    Layout = "~/Views/Shared/_Layout.cshtml";
-    ViewBag.Title = "BROWSE CATALOG";
+    Layout = "~/Views/Shared/_LayoutMainPage.cshtml";
+    ViewBag.Title = "Home-LEARNIT";
 }
-
-
-
-
-    
-   @Html.ActionLink("LEARNIT", "Index", "Home", new { @id = "logo-menu" })
-
     <!-- Header -->
+
+ 
+
     <header id="main-header" class="header">
         <div class="text-vertical-center">
             <div class="main-cont" style="cursor: default;">
@@ -29,11 +25,25 @@
     </header>
 
 
+              <!-- About -->
+        <section id="about" class="about">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 text-center">
+                        <h2>About LEARNIT</h2>
+                        <p class="lead">LEARNIT is an awesome service that gives you an opportunity to be involevd in learning process with your teachers and your team more efficient and smooth! On LEARNIT you will find a course to take or you can create your own class and become a teacher! LEARNIT offers you all the nessesary tools to study or to teach. Make your life and study process better with LEARNIT! Get knowledge, make friends, be a master.</p>
+                    </div>
+                    <!-- /.row -->
+                </div>
+                <!-- /.container -->
+            </div>
+        </section>
+
    <footer>
     <hr />
     <div class="col-lg-10 col-lg-offset-1 text-center">
         <h2>
-            LEARNIT
+            @Html.ActionLink("LEARNIT", "Index", "Home", null, new { @style = "text-decoration:none;" })
         </h2>
         <p>Moscow Kremlin<br>Russia</p>
         <ul class="list-unstyled" id="contacts-mark">
@@ -47,7 +57,7 @@
                 <a href="https://www.facebook.com/vera.khatskevich1"><i class="fa fa-facebook fa-fw fa-3x"></i></a>
             </li>
             <li>
-                <a href="user_page.html"><i class="fa fa-twitter fa-fw fa-3x"></i></a>
+                <a href="https://www.twitter.come/veralady"><i class="fa fa-twitter fa-fw fa-3x"></i></a>
             </li>
             <li>
                 <a href="https://www.github.com/verakh"><i class="fa fa-dribbble fa-fw fa-3x"></i></a>

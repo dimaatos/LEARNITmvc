@@ -28,5 +28,26 @@ namespace MVCtest.Controllers
         {
              return View();
         }
+
+        public ActionResult MedicineBiology()
+        {
+            return View();
+        }
+
+        public ActionResult MathsAndlogic()
+        {
+            return View();
+        }
+
+        public ActionResult PhysicsAndEngeneering()
+        {
+            return View();
+        }
+
+        public ActionResult SocialScience()
+        {
+            return View();
+        }
+
     }
 }

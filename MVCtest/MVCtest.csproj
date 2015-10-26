@@ -152,6 +152,11 @@
     <Content Include="Views\BrowseCatalog\HunanitiesAndFineArt.cshtml" />
     <Content Include="Views\BrowseCatalog\Business.cshtml" />
     <Content Include="Views\BrowseCatalog\ComputerScience.cshtml" />
+    <Content Include="Views\BrowseCatalog\MedicineBiology.cshtml" />
+    <Content Include="Views\BrowseCatalog\MathsAndlogic.cshtml" />
+    <Content Include="Views\BrowseCatalog\PhysicsAndEngeneering.cshtml" />
+    <Content Include="Views\BrowseCatalog\SocialScience.cshtml" />
+    <Content Include="Views\Shared\_LayoutMainPage.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
