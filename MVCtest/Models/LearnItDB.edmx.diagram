@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="1c1e9ce187f44fc48d315dd297df3298" Name="Diagram1">
+        <EntityTypeShape EntityType="LearnItDBModel.Course" Width="1.5" PointX="6.375" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="LearnItDBModel.CourseCategory" Width="1.5" PointX="6.375" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="LearnItDBModel.Subcategory" Width="1.5" PointX="3.875" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="LearnItDBModel.UserTable" Width="1.5" PointX="0.5" PointY="2.25" IsExpanded="true" />
+        <AssociationConnector Association="LearnItDBModel.FK_categoryId" ManuallyRouted="false" />
+        <AssociationConnector Association="LearnItDBModel.FK_usersId" ManuallyRouted="false" />
+        <AssociationConnector Association="LearnItDBModel.KF_categoryId" ManuallyRouted="false" />
+        <AssociationConnector Association="LearnItDBModel.UserSubscribesCourse" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,345 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="LearnItDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Course">
+          <Key>
+            <PropertyRef Name="courseId" />
+          </Key>
+          <Property Name="courseId" Type="int" Nullable="false" />
+          <Property Name="courseName" Type="nvarchar" MaxLength="40" Nullable="false" />
+          <Property Name="courseDate" Type="datetime" Nullable="false" />
+          <Property Name="CoursePhoto" Type="nvarchar" MaxLength="70" Nullable="false" />
+          <Property Name="courseAbout" Type="nvarchar" MaxLength="1000" Nullable="false" />
+          <Property Name="categoryId" Type="int" Nullable="false" />
+          <Property Name="usersId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CourseCategory">
+          <Key>
+            <PropertyRef Name="categoryId" />
+          </Key>
+          <Property Name="categoryId" Type="int" Nullable="false" />
+          <Property Name="categoryName" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Subcategory">
+          <Key>
+            <PropertyRef Name="subcategoryId" />
+          </Key>
+          <Property Name="subcategoryId" Type="int" Nullable="false" />
+          <Property Name="subcategoryName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="categoryId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UserSubscribesCourse">
+          <Key>
+            <PropertyRef Name="userId" />
+            <PropertyRef Name="courseId" />
+          </Key>
+          <Property Name="userId" Type="int" Nullable="false" />
+          <Property Name="courseId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UserTable">
+          <Key>
+            <PropertyRef Name="userId" />
+          </Key>
+          <Property Name="userId" Type="int" Nullable="false" />
+          <Property Name="loginName" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="userEmail" Type="nvarchar" MaxLength="50" />
+          <Property Name="userPassword" Type="nvarchar" MaxLength="25" Nullable="false" />
+          <Property Name="signUpDate" Type="datetime" Nullable="false" />
+          <Property Name="userName" Type="nvarchar" MaxLength="25" Nullable="false" />
+          <Property Name="userLocation" Type="nvarchar" MaxLength="50" />
+          <Property Name="userWebsite" Type="nvarchar" MaxLength="50" />
+          <Property Name="userPhoto" Type="nvarchar" MaxLength="70" />
+          <Property Name="userAbout" Type="nvarchar" MaxLength="1000" />
+        </EntityType>
+        <Association Name="FK_categoryId">
+          <End Role="CourseCategory" Type="Self.CourseCategory" Multiplicity="1" />
+          <End Role="Course" Type="Self.Course" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CourseCategory">
+              <PropertyRef Name="categoryId" />
+            </Principal>
+            <Dependent Role="Course">
+              <PropertyRef Name="categoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_courseId">
+          <End Role="Course" Type="Self.Course" Multiplicity="1" />
+          <End Role="UserSubscribesCourse" Type="Self.UserSubscribesCourse" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Course">
+              <PropertyRef Name="courseId" />
+            </Principal>
+            <Dependent Role="UserSubscribesCourse">
+              <PropertyRef Name="courseId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_userId">
+          <End Role="UserTable" Type="Self.UserTable" Multiplicity="1" />
+          <End Role="UserSubscribesCourse" Type="Self.UserSubscribesCourse" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserTable">
+              <PropertyRef Name="userId" />
+            </Principal>
+            <Dependent Role="UserSubscribesCourse">
+              <PropertyRef Name="userId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_usersId">
+          <End Role="UserTable" Type="Self.UserTable" Multiplicity="1" />
+          <End Role="Course" Type="Self.Course" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserTable">
+              <PropertyRef Name="userId" />
+            </Principal>
+            <Dependent Role="Course">
+              <PropertyRef Name="usersId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="KF_categoryId">
+          <End Role="CourseCategory" Type="Self.CourseCategory" Multiplicity="1" />
+          <End Role="Subcategory" Type="Self.Subcategory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CourseCategory">
+              <PropertyRef Name="categoryId" />
+            </Principal>
+            <Dependent Role="Subcategory">
+              <PropertyRef Name="categoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="LearnItDBModelStoreContainer">
+          <EntitySet Name="Course" EntityType="Self.Course" Schema="LearnIt" store:Type="Tables" />
+          <EntitySet Name="CourseCategory" EntityType="Self.CourseCategory" Schema="LearnIt" store:Type="Tables" />
+          <EntitySet Name="Subcategory" EntityType="Self.Subcategory" Schema="LearnIt" store:Type="Tables" />
+          <EntitySet Name="UserSubscribesCourse" EntityType="Self.UserSubscribesCourse" Schema="LearnIt" store:Type="Tables" />
+          <EntitySet Name="UserTable" EntityType="Self.UserTable" Schema="LearnIt" store:Type="Tables" />
+          <AssociationSet Name="FK_categoryId" Association="Self.FK_categoryId">
+            <End Role="CourseCategory" EntitySet="CourseCategory" />
+            <End Role="Course" EntitySet="Course" />
+          </AssociationSet>
+          <AssociationSet Name="FK_courseId" Association="Self.FK_courseId">
+            <End Role="Course" EntitySet="Course" />
+            <End Role="UserSubscribesCourse" EntitySet="UserSubscribesCourse" />
+          </AssociationSet>
+          <AssociationSet Name="FK_userId" Association="Self.FK_userId">
+            <End Role="UserTable" EntitySet="UserTable" />
+            <End Role="UserSubscribesCourse" EntitySet="UserSubscribesCourse" />
+          </AssociationSet>
+          <AssociationSet Name="FK_usersId" Association="Self.FK_usersId">
+            <End Role="UserTable" EntitySet="UserTable" />
+            <End Role="Course" EntitySet="Course" />
+          </AssociationSet>
+          <AssociationSet Name="KF_categoryId" Association="Self.KF_categoryId">
+            <End Role="CourseCategory" EntitySet="CourseCategory" />
+            <End Role="Subcategory" EntitySet="Subcategory" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="LearnItDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Course">
+          <Key>
+            <PropertyRef Name="courseId" />
+          </Key>
+          <Property Name="courseId" Type="Int32" Nullable="false" />
+          <Property Name="courseName" Type="String" MaxLength="40" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="courseDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CoursePhoto" Type="String" MaxLength="70" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="courseAbout" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="categoryId" Type="Int32" Nullable="false" />
+          <Property Name="usersId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="CourseCategory" Relationship="Self.FK_categoryId" FromRole="Course" ToRole="CourseCategory" />
+          <NavigationProperty Name="UserTable" Relationship="Self.FK_usersId" FromRole="Course" ToRole="UserTable" />
+          <NavigationProperty Name="UserTables" Relationship="Self.UserSubscribesCourse" FromRole="Course" ToRole="UserTable" />
+        </EntityType>
+        <EntityType Name="CourseCategory">
+          <Key>
+            <PropertyRef Name="categoryId" />
+          </Key>
+          <Property Name="categoryId" Type="Int32" Nullable="false" />
+          <Property Name="categoryName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Courses" Relationship="Self.FK_categoryId" FromRole="CourseCategory" ToRole="Course" />
+          <NavigationProperty Name="Subcategories" Relationship="Self.KF_categoryId" FromRole="CourseCategory" ToRole="Subcategory" />
+        </EntityType>
+        <EntityType Name="Subcategory">
+          <Key>
+            <PropertyRef Name="subcategoryId" />
+          </Key>
+          <Property Name="subcategoryId" Type="Int32" Nullable="false" />
+          <Property Name="subcategoryName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="categoryId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="CourseCategory" Relationship="Self.KF_categoryId" FromRole="Subcategory" ToRole="CourseCategory" />
+        </EntityType>
+        <EntityType Name="UserTable">
+          <Key>
+            <PropertyRef Name="userId" />
+          </Key>
+          <Property Name="userId" Type="Int32" Nullable="false" />
+          <Property Name="loginName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="userEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="userPassword" Type="String" MaxLength="25" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="signUpDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="userName" Type="String" MaxLength="25" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="userLocation" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="userWebsite" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="userPhoto" Type="String" MaxLength="70" FixedLength="false" Unicode="true" />
+          <Property Name="userAbout" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Courses" Relationship="Self.FK_usersId" FromRole="UserTable" ToRole="Course" />
+          <NavigationProperty Name="Courses1" Relationship="Self.UserSubscribesCourse" FromRole="UserTable" ToRole="Course" />
+        </EntityType>
+        <Association Name="FK_categoryId">
+          <End Role="CourseCategory" Type="Self.CourseCategory" Multiplicity="1" />
+          <End Role="Course" Type="Self.Course" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CourseCategory">
+              <PropertyRef Name="categoryId" />
+            </Principal>
+            <Dependent Role="Course">
+              <PropertyRef Name="categoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_usersId">
+          <End Role="UserTable" Type="Self.UserTable" Multiplicity="1" />
+          <End Role="Course" Type="Self.Course" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserTable">
+              <PropertyRef Name="userId" />
+            </Principal>
+            <Dependent Role="Course">
+              <PropertyRef Name="usersId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="KF_categoryId">
+          <End Role="CourseCategory" Type="Self.CourseCategory" Multiplicity="1" />
+          <End Role="Subcategory" Type="Self.Subcategory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CourseCategory">
+              <PropertyRef Name="categoryId" />
+            </Principal>
+            <Dependent Role="Subcategory">
+              <PropertyRef Name="categoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="UserSubscribesCourse">
+          <End Role="Course" Type="Self.Course" Multiplicity="*" />
+          <End Role="UserTable" Type="Self.UserTable" Multiplicity="*" />
+        </Association>
+        <EntityContainer Name="LearnItDBEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Courses" EntityType="Self.Course" />
+          <EntitySet Name="CourseCategories" EntityType="Self.CourseCategory" />
+          <EntitySet Name="Subcategories" EntityType="Self.Subcategory" />
+          <EntitySet Name="UserTables" EntityType="Self.UserTable" />
+          <AssociationSet Name="FK_categoryId" Association="Self.FK_categoryId">
+            <End Role="CourseCategory" EntitySet="CourseCategories" />
+            <End Role="Course" EntitySet="Courses" />
+          </AssociationSet>
+          <AssociationSet Name="FK_usersId" Association="Self.FK_usersId">
+            <End Role="UserTable" EntitySet="UserTables" />
+            <End Role="Course" EntitySet="Courses" />
+          </AssociationSet>
+          <AssociationSet Name="KF_categoryId" Association="Self.KF_categoryId">
+            <End Role="CourseCategory" EntitySet="CourseCategories" />
+            <End Role="Subcategory" EntitySet="Subcategories" />
+          </AssociationSet>
+          <AssociationSet Name="UserSubscribesCourse" Association="Self.UserSubscribesCourse">
+            <End Role="Course" EntitySet="Courses" />
+            <End Role="UserTable" EntitySet="UserTables" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="LearnItDBModelStoreContainer" CdmEntityContainer="LearnItDBEntities1">
+          <EntitySetMapping Name="Courses">
+            <EntityTypeMapping TypeName="LearnItDBModel.Course">
+              <MappingFragment StoreEntitySet="Course">
+                <ScalarProperty Name="courseId" ColumnName="courseId" />
+                <ScalarProperty Name="courseName" ColumnName="courseName" />
+                <ScalarProperty Name="courseDate" ColumnName="courseDate" />
+                <ScalarProperty Name="CoursePhoto" ColumnName="CoursePhoto" />
+                <ScalarProperty Name="courseAbout" ColumnName="courseAbout" />
+                <ScalarProperty Name="categoryId" ColumnName="categoryId" />
+                <ScalarProperty Name="usersId" ColumnName="usersId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CourseCategories">
+            <EntityTypeMapping TypeName="LearnItDBModel.CourseCategory">
+              <MappingFragment StoreEntitySet="CourseCategory">
+                <ScalarProperty Name="categoryId" ColumnName="categoryId" />
+                <ScalarProperty Name="categoryName" ColumnName="categoryName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Subcategories">
+            <EntityTypeMapping TypeName="LearnItDBModel.Subcategory">
+              <MappingFragment StoreEntitySet="Subcategory">
+                <ScalarProperty Name="subcategoryId" ColumnName="subcategoryId" />
+                <ScalarProperty Name="subcategoryName" ColumnName="subcategoryName" />
+                <ScalarProperty Name="categoryId" ColumnName="categoryId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserTables">
+            <EntityTypeMapping TypeName="LearnItDBModel.UserTable">
+              <MappingFragment StoreEntitySet="UserTable">
+                <ScalarProperty Name="userId" ColumnName="userId" />
+                <ScalarProperty Name="loginName" ColumnName="loginName" />
+                <ScalarProperty Name="userEmail" ColumnName="userEmail" />
+                <ScalarProperty Name="userPassword" ColumnName="userPassword" />
+                <ScalarProperty Name="signUpDate" ColumnName="signUpDate" />
+                <ScalarProperty Name="userName" ColumnName="userName" />
+                <ScalarProperty Name="userLocation" ColumnName="userLocation" />
+                <ScalarProperty Name="userWebsite" ColumnName="userWebsite" />
+                <ScalarProperty Name="userPhoto" ColumnName="userPhoto" />
+                <ScalarProperty Name="userAbout" ColumnName="userAbout" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="UserSubscribesCourse" TypeName="LearnItDBModel.UserSubscribesCourse" StoreEntitySet="UserSubscribesCourse">
+            <EndProperty Name="Course">
+              <ScalarProperty Name="courseId" ColumnName="courseId" />
+            </EndProperty>
+            <EndProperty Name="UserTable">
+              <ScalarProperty Name="userId" ColumnName="userId" />
+            </EndProperty>
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
