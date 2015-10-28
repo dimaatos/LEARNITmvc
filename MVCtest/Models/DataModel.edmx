@@ -237,7 +237,7 @@
           <End Role="Course" Type="Self.Course" Multiplicity="*" />
           <End Role="UserTable" Type="Self.UserTable" Multiplicity="*" />
         </Association>
-        <EntityContainer Name="LearnItDBEntities1" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="LearnItDB" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Courses" EntityType="Self.Course" />
           <EntitySet Name="CourseCategories" EntityType="Self.CourseCategory" />
           <EntitySet Name="Subcategories" EntityType="Self.Subcategory" />
@@ -264,7 +264,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="LearnItDBModelStoreContainer" CdmEntityContainer="LearnItDBEntities1">
+        <EntityContainerMapping StorageEntityContainer="LearnItDBModelStoreContainer" CdmEntityContainer="LearnItDB">
           <EntitySetMapping Name="Courses">
             <EntityTypeMapping TypeName="LearnItDBModel.Course">
               <MappingFragment StoreEntitySet="Course">

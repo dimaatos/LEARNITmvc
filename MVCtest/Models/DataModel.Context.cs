@@ -13,10 +13,10 @@ namespace MVCtest.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class LearnItDBEntities1 : DbContext
+    public partial class LearnItDB : DbContext
     {
-        public LearnItDBEntities1()
-            : base("name=LearnItDBEntities1")
+        public LearnItDB()
+            : base("name=LearnItDB")
         {
         }
     

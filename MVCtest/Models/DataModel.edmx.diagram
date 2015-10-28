@@ -4,10 +4,10 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="99bce1c2da6049cba98d06799357cdae" Name="Diagram1">
-        <EntityTypeShape EntityType="LearnItDBModel.Course" Width="1.5" PointX="3" PointY="2.5" IsExpanded="true" />
+      <Diagram DiagramId="e5638d494ee54476b4131893f1f19ba3" Name="MainDiagram">
+        <EntityTypeShape EntityType="LearnItDBModel.Course" Width="1.5" PointX="3" PointY="2.625" IsExpanded="true" />
         <EntityTypeShape EntityType="LearnItDBModel.CourseCategory" Width="1.5" PointX="0.75" PointY="3.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="LearnItDBModel.Subcategory" Width="1.5" PointX="3" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="LearnItDBModel.Subcategory" Width="1.5" PointX="3" PointY="7.25" IsExpanded="true" />
         <EntityTypeShape EntityType="LearnItDBModel.UserTable" Width="1.5" PointX="5.25" PointY="2.375" IsExpanded="true" />
         <AssociationConnector Association="LearnItDBModel.FK_categoryId" ManuallyRouted="false" />
         <AssociationConnector Association="LearnItDBModel.FK_usersId" ManuallyRouted="false" />
