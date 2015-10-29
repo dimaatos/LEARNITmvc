@@ -175,7 +175,9 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\images\catalog_main.jpg" />
+    <Content Include="Content\images\catalog_main5.jpg" />
     <Content Include="Content\images\mainpage.jpg" />
+    <Content Include="Content\Site.css" />
     <Content Include="Content\stylish-portfolio.css" />
     <Content Include="fonts\font-awesome.min.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
