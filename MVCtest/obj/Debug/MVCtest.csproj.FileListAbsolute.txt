@@ -231,7 +231,6 @@ C:\Users\tsukomoto\Desktop\LEARNITmvc\MVCtest\bin\System.Web.Webpages.Deployment
 C:\Users\tsukomoto\Desktop\LEARNITmvc\MVCtest\bin\System.Web.Webpages.Razor.xml
 C:\Users\tsukomoto\Desktop\LEARNITmvc\MVCtest\bin\System.Web.Helpers.xml
 C:\Users\tsukomoto\Desktop\LEARNITmvc\MVCtest\bin\System.Web.Mvc.xml
-C:\Users\tsukomoto\Desktop\LEARNITmvc\MVCtest\obj\Debug\MVCtest.csprojResolveAssemblyReference.cache
 C:\Users\tsukomoto\Desktop\LEARNITmvc\MVCtest\obj\Debug\MVCtest.dll
 C:\Users\tsukomoto\Desktop\LEARNITmvc\MVCtest\obj\Debug\MVCtest.pdb
 C:\Users\tsukomoto\Desktop\LEARNITmvc\MVCtest\obj\Debug\MVCtest.csproj.App.config
