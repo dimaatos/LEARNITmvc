@@ -2,7 +2,6 @@ html,
 body {
     width: 100%;
     height: 100%;
-    font-family: 'Lato', sans-serif;
      margin: 0px;
 }
 
@@ -723,7 +722,7 @@ hr.small {
 }
 
 .location-icon::before{
-    background: url("../img/location.png") no-repeat 0 0;
+    background: url("images/location.png") no-repeat 0 0;
     display: inline-block;
     width: 10px;
     height: 10px;
@@ -734,7 +733,7 @@ hr.small {
 }
 
 .data-icon::before{
-    background: url("../img/data.png") no-repeat 0 0;
+    background: url("images/data.png") no-repeat 0 0;
     display: inline-block;
     width: 8px;
     height: 8px;
