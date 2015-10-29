@@ -1,8 +1,55 @@
-﻿
+﻿@model MVCtest.Models.RegisterViewModel
+
+
 @{
-    ViewBag.Title = "Register";
-    Layout = "~/Views/Shared/_LayoutMainPage.cshtml";
+    ViewBag.Title = "Sign Up!";
+    Layout = "~/Views/Shared/_CategoriesLayout.cshtml";
 }
 
-<h2>Register</h2>
+<header class="header-catal" id="sign-in-image">
+    <div class="main-cont">
+        <div class="catalog-list-div" id="sign-up-div">
+            
+            
+            @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @id = "profile-form", role = "form" }))
+            {
 
+                @Html.AntiForgeryToken()
+
+                @Html.ValidationSummary("", new { @class = "text-danger" })
+
+                <div id="form-group">
+                    @Html.LabelFor(m => m.Email)
+                    <div class="col-md-10">
+                        @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Password)
+                    <div class="col-md-10">
+                        @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(m => m.ConfirmPassword)
+                    <div class="col-md-10">
+                        @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input class="btn btn-success" type="submit" value="Sing Up!" id="submit">
+                    <a href="#" id="cancelbt" class="btn" data-dismiss="modal">Cancel</a>
+                    </div>
+            }
+          
+        </div>
+
+        </div>
+    </header>
+
+
+      
+
+
+    
+    

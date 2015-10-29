@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Mvc;
 
-namespace MVCFinal
+namespace MVCtest
 {
     public class FilterConfig
     {
