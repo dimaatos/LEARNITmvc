@@ -193,7 +193,6 @@
 \\Mac\Home\Desktop\LEARNITmvc\MVCtest\obj\Debug\MVCtest.dll
 \\Mac\Home\Desktop\LEARNITmvc\MVCtest\obj\Debug\MVCtest.pdb
 \\Mac\Home\Desktop\LEARNITmvc\MVCtest\obj\Debug\MVCtest.csprojResolveAssemblyReference.cache
-<<<<<<< HEAD
 C:\Users\tsukomoto\Desktop\LEARNITmvc\MVCtest\bin\roslyn\csc.exe
 C:\Users\tsukomoto\Desktop\LEARNITmvc\MVCtest\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
 C:\Users\tsukomoto\Desktop\LEARNITmvc\MVCtest\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
@@ -264,8 +263,3 @@ C:\Users\tsukomoto\Desktop\LEARNITmvc\MVCtest\bin\Newtonsoft.Json.xml
 C:\Users\tsukomoto\Desktop\LEARNITmvc\MVCtest\bin\System.Net.Http.Extensions.xml
 C:\Users\tsukomoto\Desktop\LEARNITmvc\MVCtest\bin\System.Net.Http.Primitives.xml
 C:\Users\tsukomoto\Desktop\LEARNITmvc\MVCtest\bin\System.Web.Optimization.xml
-=======
-H:\Programming.Source\GitHub\LEARNITmvc\MVCtest\obj\Debug\MVCtest.csprojResolveAssemblyReference.cache
-H:\Programming.Source\GitHub\LEARNITmvc\MVCtest\obj\Debug\MVCtest.dll
-H:\Programming.Source\GitHub\LEARNITmvc\MVCtest\obj\Debug\MVCtest.pdb
->>>>>>> abf535b359fcda6f39dec1087c1360a3fdc1dbe5
