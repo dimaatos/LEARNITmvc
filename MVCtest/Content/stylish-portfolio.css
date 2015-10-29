@@ -177,6 +177,10 @@ font-weight: 700;
     height:100%;
 }
 
+#get-know{
+    font-weight:700;
+}
+
 
 .catalog-list-div{
     width: 200px;
@@ -790,6 +794,13 @@ hr.small {
   
 }
 
+
+.hell0-user{
+    width: auto;
+    right: 340px;
+    background-color: rgba(142, 213, 87, 0.6);
+    cursor: pointer;
+}
 
 
 /* Footer */
