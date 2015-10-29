@@ -193,3 +193,6 @@
 \\Mac\Home\Desktop\LEARNITmvc\MVCtest\obj\Debug\MVCtest.dll
 \\Mac\Home\Desktop\LEARNITmvc\MVCtest\obj\Debug\MVCtest.pdb
 \\Mac\Home\Desktop\LEARNITmvc\MVCtest\obj\Debug\MVCtest.csprojResolveAssemblyReference.cache
+H:\Programming.Source\GitHub\LEARNITmvc\MVCtest\obj\Debug\MVCtest.csprojResolveAssemblyReference.cache
+H:\Programming.Source\GitHub\LEARNITmvc\MVCtest\obj\Debug\MVCtest.dll
+H:\Programming.Source\GitHub\LEARNITmvc\MVCtest\obj\Debug\MVCtest.pdb

@@ -3,43 +3,35 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using MVCtest.Models;
 
 namespace MVCtest.Controllers
 {
     public class UserController : Controller
     {
-       UsersEntities db = new UsersEntities();
+        private readonly LearnItDB _db = new LearnItDB();
 
-
+        [HttpGet]
         public ActionResult Register()
         {
-            var NewUser = new UserTable();
+            UserTable newUser = new UserTable();
+
             return View(NewUser);
         }
 
-
-
+        [HttpPost]
         public ActionResult Register(UserTable model)
         {
 
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
-                UserTable user = new UserTable();
-
-                user.loginName = model.loginName;
-                user.userEmail = model.userEmail;
-                user.userPassword = model.userPassword;
-
-                db.UserTables.Add(model);
-
                 return View(model);
-            }
+            }            
 
-            else
-            {
-                return RedirectToAction("Index", "Home");
-            }
+            _db.UserTables.Add(model);
+            _db.SaveChanges();            
 
+            return RedirectToAction("Index", "Home");
         }
     }
 }

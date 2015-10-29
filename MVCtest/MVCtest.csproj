@@ -127,23 +127,23 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
-    <EntityDeploy Include="Models\learnITmodel.edmx">
+    <EntityDeploy Include="Models\DataModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>learnITmodel.Designer.cs</LastGenOutput>
+      <LastGenOutput>DataModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Models\learnITmodel.edmx.diagram">
-      <DependentUpon>learnITmodel.edmx</DependentUpon>
+    <Content Include="Models\DataModel.edmx.diagram">
+      <DependentUpon>DataModel.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-2.1.4.intellisense.js" />
-    <Content Include="Models\learnITmodel.Context.tt">
+    <Content Include="Models\DataModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>learnITmodel.edmx</DependentUpon>
-      <LastGenOutput>learnITmodel.Context.cs</LastGenOutput>
+      <DependentUpon>DataModel.edmx</DependentUpon>
+      <LastGenOutput>DataModel.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\learnITmodel.tt">
+    <Content Include="Models\DataModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>learnITmodel.edmx</DependentUpon>
-      <LastGenOutput>learnITmodel.cs</LastGenOutput>
+      <DependentUpon>DataModel.edmx</DependentUpon>
+      <LastGenOutput>DataModel.cs</LastGenOutput>
     </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -163,31 +163,31 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Course.cs">
-      <DependentUpon>learnITmodel.tt</DependentUpon>
+      <DependentUpon>DataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\CourseCategory.cs">
-      <DependentUpon>learnITmodel.tt</DependentUpon>
+      <DependentUpon>DataModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\learnITmodel.Context.cs">
+    <Compile Include="Models\DataModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>learnITmodel.Context.tt</DependentUpon>
+      <DependentUpon>DataModel.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\learnITmodel.cs">
+    <Compile Include="Models\DataModel.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>learnITmodel.tt</DependentUpon>
+      <DependentUpon>DataModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\learnITmodel.Designer.cs">
+    <Compile Include="Models\DataModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>learnITmodel.edmx</DependentUpon>
+      <DependentUpon>DataModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\Subcategory.cs">
-      <DependentUpon>learnITmodel.tt</DependentUpon>
+      <DependentUpon>DataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\UserTable.cs">
-      <DependentUpon>learnITmodel.tt</DependentUpon>
+      <DependentUpon>DataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
