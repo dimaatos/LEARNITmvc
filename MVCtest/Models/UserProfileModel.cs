@@ -4,16 +4,18 @@ using System.Linq;
 using System.Web;
 using System.ComponentModel.DataAnnotations;
 using System.Data.Entity;
+using Microsoft.AspNet.Identity;
+
 
 namespace MVCtest.Models
 {
 
-    public class UserProfileDataContext : ApplicationDbContext
+    public class UserProfileDBContext : DbContext
     {
         public DbSet<UserProfileModel> UserProfiles { get; set; }
     }
 
-    public class UserProfileModel
+    public class UserProfileModel 
     {
         public UserProfileModel()
         {

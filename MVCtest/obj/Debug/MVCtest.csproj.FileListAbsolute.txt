@@ -290,4 +290,3 @@ C:\Users\tsukomoto\Desktop\LEARNITmvc\MVCtest\bin\System.Web.Optimization.xml
 \\Mac\Home\Desktop\LEARNITmvc\MVCtest\bin\System.Net.Http.Primitives.xml
 \\Mac\Home\Desktop\LEARNITmvc\MVCtest\bin\System.Web.Optimization.xml
 \\Mac\Home\Desktop\LEARNITmvc\MVCtest\obj\Debug\MVCtest.csproj.App.config
-\\Mac\Home\Desktop\LEARNITmvc\MVCtest\obj\Debug\MVCtest.csprojResolveAssemblyReference.cache

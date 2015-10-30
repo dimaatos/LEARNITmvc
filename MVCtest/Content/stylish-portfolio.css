@@ -387,6 +387,7 @@ text-decoration: none;
 
 .form-control{
     width: 300px;
+    color: #000;
 }
 
 #cancelbt{

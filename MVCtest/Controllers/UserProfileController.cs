@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.ComponentModel.DataAnnotations;
 using MVCtest.Models;
+using Microsoft.AspNet.Identity;
 
 
 namespace MVCtest.Controllers
@@ -12,13 +13,29 @@ namespace MVCtest.Controllers
 
     public class UserProfileController : Controller
     {
-        [HttpPost]
+        private UserProfileDBContext db = new UserProfileDBContext();
+
+
+        [HttpGet]
         public ActionResult Create()
         {
+            return View();
+        }
+
+
+        [HttpPost]
+        public ActionResult Create(UserProfileModel model)
+        {
             if (ModelState.IsValid)
-            {
-                var db = new UserProfileDataContext()
+            { 
+
+               db.UserProfiles.Add(model);
+                db.SaveChanges();
+
+                return RedirectToAction("Index");
             }
+
+            return View();
         }
 
     }

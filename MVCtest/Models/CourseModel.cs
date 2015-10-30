@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Data.Entity;
+using System.ComponentModel.DataAnnotations;
 
 
 namespace MVCtest.Models
 {
 
-    public class CourseDataContext : ApplicationDbContext
+    public class CourseDbContext : DbContext
     {
         public DbSet<CourseModel> Courses { get; set; }
     }
@@ -16,6 +17,7 @@ namespace MVCtest.Models
 
     public class CourseModel
     {
+        [Key]
         public int CourseId { get; set; }
 
         public string CourseName { set; get; }
