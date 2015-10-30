@@ -291,6 +291,7 @@
     <Content Include="Views\Manage\index.cshtml" />
     <Content Include="Views\Profile\Create.cshtml" />
     <Content Include="Views\Shared\_UserLayout.cshtml" />
+    <Content Include="Views\Shared\_NavigateLayout.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
