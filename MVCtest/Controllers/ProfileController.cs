@@ -27,7 +27,7 @@ namespace MVCtest.Controllers
                 db.UserProfiles.Add(model);
                 db.SaveChanges();
 
-                return View(model);
+                return RedirectToAction("Index", "Manage");
             }
 
             return View();

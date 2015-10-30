@@ -39,33 +39,12 @@
 
 
     <!-- Fixed top Navigation --> 
-    <a id="menu-toggle" href="#" class="btn btn-dark btn-lg toggle"><i class="fa fa-bars"></i></a>
+   
      @Html.Partial("_LoginPartial")
     <!-- End of fixed top Navigation -->
 
 
-    <!--Static right menu -->
-    <nav id="sidebar-wrapper" class="bar">
-        <ul class="sidebar-nav">
-            <a id="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle"><i class="fa fa-times"></i></a>
-            <li class="sidebar-brand">
-                <a href="#top" onclick=$("#menu-close").click();>LEARNIT</a>
-            </li>
-            <li>
-                <a href="#top" onclick=$("#menu-close").click();>Home</a>
-            </li>
-            <li>
-                <a href="#about" onclick=$("#menu-close").click();>About</a>
-            </li>
-            <li>
-                @Html.ActionLink("Browse Catalog", "Catalog", "BrowseCatalog")
-            </li>
-            <li>
-                <a href="#contacts-mark" onclick=$("#menu-close").click();>Contacts</a>
-            </li>
-        </ul>
-    </nav>
-    <!-- end Static right menu -->  
+   
 
     @RenderBody()
 

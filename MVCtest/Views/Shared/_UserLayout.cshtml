@@ -40,7 +40,7 @@
 
     <!-- Fixed top Navigation -->
     <a id="menu-toggle" href="#" class="btn btn-dark btn-lg toggle"><i class="fa fa-bars"></i></a>
-    using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+    @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { @id = "logoutForm", @class = "navbar-right" }))
     {
     @Html.AntiForgeryToken()
 
@@ -49,7 +49,7 @@
     <a href="javascript:document.getElementById('logoutForm').submit()" id="menu" , class="sign-in-btn">Log Out</a>
 
 
-    }
+    
     <!-- End of fixed top Navigation -->
     <!--Static right menu -->
     <nav id="sidebar-wrapper" class="bar">
@@ -71,6 +71,8 @@
         </ul>
     </nav>
     <!-- end Static right menu -->
+
+    }
 
     @RenderBody()
 
