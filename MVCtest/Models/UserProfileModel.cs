@@ -25,18 +25,24 @@ namespace MVCtest.Models
         [Key]
         public int UserProfileId { get; set; }
 
+        [Display(Name = "Joined us on")]
         public DateTime JoindDay { get; set; }
 
+        [Display(Name = "Username")]
         public string Name { get; set; }
 
+        [Display(Name = "Your photo")]
         public string ProfilePicUrl { get; set; }
 
+        [Display(Name = "Your location")]
         public string Location { get; set; }
 
+        [Display(Name = "Tell about yourself")]
         public string About { get; set; }
-
+        
         public string UserId { get; set; }
 
+        [Display(Name = "Your courses")]
         public virtual ICollection<CourseModel> Courses { get; set; }
 
     }
