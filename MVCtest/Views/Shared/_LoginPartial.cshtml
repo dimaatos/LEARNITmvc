@@ -7,9 +7,10 @@
     {
     @Html.AntiForgeryToken()
 
-    @Html.ActionLink("Your profile", "Create", "UserProfile", routeValues: null, htmlAttributes: new { title = "Manage", @id = "menu", @class = "hell0-user" })
+    @Html.ActionLink("Explore", "Catalog", "BrowseCatalog", routeValues: null, htmlAttributes: new { title = "Manage", @id = "menu", @class = "create-course-btn" })
 
     <a href="javascript:document.getElementById('logoutForm').submit()" id="menu", class="sign-in-btn">Log Out</a>
+
 
     }
 }

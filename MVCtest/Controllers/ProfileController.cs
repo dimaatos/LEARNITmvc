@@ -27,7 +27,7 @@ namespace MVCtest.Controllers
                 db.UserProfiles.Add(model);
                 db.SaveChanges();
 
-                return RedirectToAction("Index", "Home");
+                return View(model);
             }
 
             return View();

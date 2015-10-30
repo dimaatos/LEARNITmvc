@@ -12,8 +12,17 @@ namespace MVCtest.Models
 
     public class UserProfileDBContext : DbContext
     {
+
+        public UserProfileDBContext():
+            base("LearnItDBEntities")
+        { }
+
         public DbSet<UserProfileModel> UserProfiles { get; set; }
+
+
+        //public DbSet<UserProfileModel> UserProfiles { get; set; }
     }
+
 
     public class UserProfileModel 
     {
