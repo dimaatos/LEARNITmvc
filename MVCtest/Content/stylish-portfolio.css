@@ -2,7 +2,6 @@ html,
 body {
     width: 100%;
     height: 100%;
-    font-family: 'Lato', sans-serif;
      margin: 0px;
 }
 
@@ -175,6 +174,10 @@ font-weight: 700;
 .main-cont{
     width: 100%;
     height:100%;
+}
+
+#get-know{
+    font-weight:700;
 }
 
 
@@ -384,6 +387,7 @@ text-decoration: none;
 
 .form-control{
     width: 300px;
+    color: #000;
 }
 
 #cancelbt{
@@ -719,7 +723,7 @@ hr.small {
 }
 
 .location-icon::before{
-    background: url("../img/location.png") no-repeat 0 0;
+    background: url("images/location.png") no-repeat 0 0;
     display: inline-block;
     width: 10px;
     height: 10px;
@@ -730,7 +734,7 @@ hr.small {
 }
 
 .data-icon::before{
-    background: url("../img/data.png") no-repeat 0 0;
+    background: url("images/data.png") no-repeat 0 0;
     display: inline-block;
     width: 8px;
     height: 8px;
@@ -790,6 +794,13 @@ hr.small {
   
 }
 
+
+.hell0-user{
+    width: auto;
+    right: 340px;
+    background-color: rgba(142, 213, 87, 0.6);
+    cursor: pointer;
+}
 
 
 /* Footer */

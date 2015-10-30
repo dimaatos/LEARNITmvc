@@ -2,9 +2,11 @@
 using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNet.Identity;
 using Microsoft.Owin.Security;
+using System.Data.Entity;
 
 namespace MVCtest.Models
 {
+
     public class IndexViewModel
     {
         public bool HasPassword { get; set; }
@@ -83,4 +85,6 @@ namespace MVCtest.Models
         public string SelectedProvider { get; set; }
         public ICollection<System.Web.Mvc.SelectListItem> Providers { get; set; }
     }
+
+    
 }
