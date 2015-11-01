@@ -8,6 +8,11 @@ namespace MVCtest.Models
         [Required]
         [Display(Name = "Email")]
         public string Email { get; set; }
+
+        public string Location { get; set; }
+        public string About { get; set; }
+        public string Name { get; set; }
+        public string Photo { get; set; }
     }
 
     public class ExternalLoginListViewModel

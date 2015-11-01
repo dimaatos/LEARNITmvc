@@ -292,6 +292,7 @@
     <Content Include="Views\Profile\Create.cshtml" />
     <Content Include="Views\Shared\_UserLayout.cshtml" />
     <Content Include="Views\Shared\_NavigateLayout.cshtml" />
+    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
