@@ -57,6 +57,26 @@
         <dd>
             @Html.DisplayFor(model => model.CoursePictureURL)
         </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Subscriptions)
+        </dt>
+        <dd>
+            <table class="table">
+                <tr>
+                    <th>Subscribers</th>
+                </tr>
+                @foreach (var item in Model.Subscriptions)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.User.UserEmail)
+                            @Html.DisplayFor(modelItem => item.User.UserName)
+                        </td>
+                    </tr>
+                }
+            </table>
+        </dd>
+      
 
     </dl>
 </div>

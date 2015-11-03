@@ -25,6 +25,24 @@
         <dd>
             @Html.DisplayFor(model => model.UserName)
         </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Subscriptions)
+        </dt>
+        <dd>
+            <table class="table">
+                <tr>
+                    <th>Course Title</th>
+                </tr>
+                @foreach (var item in Model.Subscriptions)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Course.CourseName)
+                        </td>
+                    </tr>
+                }
+            </table>
+        </dd>
 
     </dl>
 </div>
