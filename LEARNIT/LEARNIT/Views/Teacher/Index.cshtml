@@ -1,0 +1,52 @@
+﻿@model IEnumerable<LEARNIT.Models.Teacher>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        
+        <th>
+            @Html.DisplayNameFor(model => model.Photo)
+        </th>
+       
+        <th>
+            @Html.DisplayNameFor(model => model.TeacherName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Education)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TeacherAbout)
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <th>
+            <img src="@Url.Content(Request.Url.GetLeftPart(UriPartial.Authority))/Upload/Photo/@Html.DisplayFor(modelItem => item.Photo)" height="100px" />
+        </th>
+        <td>
+            @Html.DisplayFor(modelItem => item.TeacherName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Education)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TeacherAbout)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.TeacherID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.TeacherID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.TeacherID })
+        </td>
+    </tr>
+}
+
+</table>
