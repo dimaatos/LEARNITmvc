@@ -30,7 +30,7 @@
 @foreach (var item in Model) {
     <tr>
         <th>
-            <img src="@Url.Content(Request.Url.GetLeftPart(UriPartial.Authority))/Upload/Photo/@Html.DisplayFor(modelItem => item.Photo)" height="100px" />
+            <img src="@Url.Content(Request.Url.GetLeftPart(UriPartial.Authority))/Upload/Photo/@Html.DisplayFor(modelItem => item.Photo.PhotoNameOnServer)" height="100px" />
         </th>
         <td>
             @Html.DisplayFor(modelItem => item.TeacherName)
