@@ -20,10 +20,19 @@ namespace LEARNIT.Controllers
         }
 
         // GET: Course
-        public ActionResult Index()
+        public ActionResult Index(string searchString)
         {
-            var courses = db.Courses.Include(c => c.Category).Include(c => c.Photo).Include(c => c.Teacher);
-            return View(courses.ToList());
+            //var courses = db.Courses.Include(c => c.Category).Include(c => c.Photo).Include(c => c.Teacher);
+
+            var courserus = from s in db.Courses
+                            select s;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                courserus = courserus.Where(s => s.CourseName.Contains(searchString));
+            }
+
+            return View(courserus.ToList());
         }
 
         // GET: Course/Details/5

@@ -12,11 +12,7 @@
             @Html.ActionLink("LEARNIT", "Index", "Home")
         </li>
         <li>
-            @Html.ActionLink("Edit Profile", "Create", "Profile")
-        </li>
-
-        <li>
-            @Html.ActionLink("Browse Catalog", "Catalog", "BrowseCatalog")
+            @Html.ActionLink("Search Course", "Index", "Course")
         </li>
         <li>
             <a href="#contacts-mark" onclick=$("#menu-close").click();>Contacts</a>
@@ -33,7 +29,9 @@
 
         <div class="vert-menu-course-name">
             <h1 class="user-name-area">
-                <span class="user-full-name"><a>@Html.DisplayFor(model => model.Teacher.TeacherName)</a></span>
+                <span class="user-full-name">
+                    <a href="/teacher/details/@Html.DisplayFor(model => model.Teacher.TeacherID)">@Html.DisplayFor(model => model.Teacher.TeacherName)</a>
+                </span>
                 <span class="username"></span>
             </h1>
             <ul class="user-info">

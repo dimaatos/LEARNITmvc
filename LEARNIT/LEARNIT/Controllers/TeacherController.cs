@@ -15,10 +15,19 @@ namespace LEARNIT.Controllers
         private ApContext db = new ApContext();
 
         // GET: Teacher
-        public ActionResult Index()
+        public ActionResult Index(string searchString)
         {
-            var teachers = db.Teachers.Include(t => t.Photo);
-            return View(teachers.ToList());
+            var teachers = db.Teachers.Include(t => t.Photo).OrderBy(q => q.TeacherName).ToList();
+
+            var teacherus = from s in db.Teachers
+                           select s;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                teacherus = teacherus.Where(s => s.TeacherName.Contains(searchString));
+            }
+
+                return View(teacherus.ToList());
         }
 
         // GET: Teacher/Details/5
