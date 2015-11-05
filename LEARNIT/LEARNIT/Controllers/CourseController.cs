@@ -14,6 +14,11 @@ namespace LEARNIT.Controllers
     {
         private ApContext db = new ApContext();
 
+        public ActionResult CoursePage()
+        {
+            return View();
+        }
+
         // GET: Course
         public ActionResult Index()
         {

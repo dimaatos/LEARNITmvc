@@ -1,4 +1,4 @@
-﻿@model IEnumerable<LEARNIT.Models.Photo>
+﻿@model IEnumerable<LEARNIT.Models.Course>
 @{
     Layout = "~/Views/Shared/_LayoutMain.cshtml";
     ViewBag.Title = "Home-LEARNIT";
@@ -56,34 +56,39 @@
     <div>
         <h2>Sibscribe for our popular courses!</h2>
         <div class="row" id="courses-row">
-            <article class="6u 12u$(xsmall) work-item">
-                <a href=" #" class="image fit thumb">
+           
+             <article class="6u 12u$(xsmall) work-item">
+
+                <a href="/Course/Details/2" class="image fit thumb">
                 <img src="@Url.Content(Request.Url.GetLeftPart(UriPartial.Authority))/Upload/Photo/U97gCOief2N3mvFIXHr1VnzPYSMWtB.jpg" alt="" />
                 </a>
-                <h3>Magna sed consequat tempus</h3>
-                <p>Lorem ipsum dolor sit amet nisl sed nullam feugiat.</p>
+                <h3>Structure and Interpretation of Computer Programs</h3>
+                <p>Howard  Volovitz</p>
             </article>
+
             <article class="6u$ 12u$(xsmall) work-item">
-                <a href="~/Content/images/fulls/01.jpg" class="image fit thumb">
+                <a href="/Course/Details/1" class="image fit thumb">
                     <img src="@Url.Content(Request.Url.GetLeftPart(UriPartial.Authority))/Upload/Photo/7NQeR28msUdCHkvy5abrtizPD1qMfE.jpg" alt="" />
                 </a>
-                <h3>Ultricies lacinia interdum</h3>
-                <p>Lorem ipsum dolor sit amet nisl sed nullam feugiat.</p>
+                <h3>Mathematical Logic</h3>
+                <p>Sheldon Cooper</p>
             </article>
 
             <article class="6u 12u$(xsmall) work-item">
-                <a  href="#" class="image fit thumb">
+                <a href="/Course/Details/3" class="image fit thumb">
                     <img src="@Url.Content(Request.Url.GetLeftPart(UriPartial.Authority))/Upload/Photo/VxS6Bm4ROb2tvZf7N85IpC3lwMkWXD.jpg" alt="" />
                 </a>
-                <h3>Tortor metus commodo</h3>
-                <p>Lorem ipsum dolor sit amet nisl sed nullam feugiat.</p>
+                <h3>Economic development in India</h3>
+                <p>Rajesh Ramayan Koothrappali</p>
             </article>
+
+
             <article class="6u$ 12u$(xsmall) work-item">
-                <a  href="#" class="image fit thumb">
+                <a href="/Course/Details/4" class="image fit thumb">
                     <img src="@Url.Content(Request.Url.GetLeftPart(UriPartial.Authority))/Upload/Photo/epCY3cHW6EbRmP5kTgQdhIxABy1qKo.jpg" alt="" />
                 </a>
-                <h3>Quam neque phasellus</h3>
-                <p>Lorem ipsum dolor sit amet nisl sed nullam feugiat.</p>
+                <h3>History Of Princeton University</h3>
+                <p>Leonard Leakey Hofstadter</p>
             </article>
             <a class="scroll-down icon-arrow-left" id="scroll-for-dashboard" data-offset="-45" href="#about">
                 <span class="hidden">Scroll Down</span>

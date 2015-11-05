@@ -315,7 +315,7 @@
     <Content Include="Views\Category\Index.cshtml" />
     <Content Include="Views\Course\Create.cshtml" />
     <Content Include="Views\Course\Delete.cshtml" />
-    <Content Include="Views\Course\Details.cshtml" />
+    <Content Include="Views\Course\Details1.cshtml" />
     <Content Include="Views\Course\Edit.cshtml" />
     <Content Include="Views\Course\Index.cshtml" />
     <Content Include="Views\Teacher\Create.cshtml" />
@@ -340,6 +340,7 @@
     <Content Include="Views\Photo\Index.cshtml" />
     <Content Include="Views\Photo\Upload.cshtml" />
     <Content Include="Views\Shared\_LayoutMain.cshtml" />
+    <Content Include="Views\Course\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

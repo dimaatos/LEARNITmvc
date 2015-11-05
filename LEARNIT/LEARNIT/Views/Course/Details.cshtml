@@ -1,66 +1,103 @@
 ﻿@model LEARNIT.Models.Course
-
 @{
-    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutMain.cshtml";
 }
 
-<h2>Details</h2>
+<a id="menu-toggle" href="#" class="btn btn-dark btn-lg toggle"><i class="fa fa-bars"></i></a>
+<!--Static right menu -->
+<nav id="sidebar-wrapper" class="bar">
+    <ul class="sidebar-nav">
+        <a id="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle"><i class="fa fa-times"></i></a>
+        <li class="sidebar-brand">
+            @Html.ActionLink("LEARNIT", "Index", "Home")
+        </li>
+        <li>
+            @Html.ActionLink("Edit Profile", "Create", "Profile")
+        </li>
 
-<div>
-    <h4>Course</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Category.CategoryName)
-        </dt>
+        <li>
+            @Html.ActionLink("Browse Catalog", "Catalog", "BrowseCatalog")
+        </li>
+        <li>
+            <a href="#contacts-mark" onclick=$("#menu-close").click();>Contacts</a>
+        </li>
+    </ul>
+</nav>
+<!-- end Static right menu -->
+<!-- Header -->
 
-        <dd>
-            @Html.DisplayFor(model => model.Category.CategoryName)
-        </dd>
+<section  id="my">
+    <header id="header" >
+        <a href="#" class="image avatar"><img src="@Url.Content(Request.Url.GetLeftPart(UriPartial.Authority))/Upload/Photo/@Html.DisplayFor(model => model.Photo.PhotoNameOnServer)" height="100px" /></a>
+        <h1>By teacher<strong><a></a></strong></h1>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Photo.PhotoName)
-        </dt>
+        <div class="vert-menu-course-name">
+            <h1 class="user-name-area">
+                <span class="user-full-name"><a>@Html.DisplayFor(model => model.Teacher.TeacherName)</a></span>
+                <span class="username"></span>
+            </h1>
+            <ul class="user-info">
+                <li class="data-detail">
+                    <span class="data-icon"></span>
+                    <span class="joined-data"></span>On Air since
+                    <time>@Html.DisplayFor(model => model.StartDate)</time>
+                </li>
+            </ul>
+        </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.Photo.PhotoName)
-        </dd>
+    </header>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Teacher.TeacherName)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Teacher.TeacherName)
-        </dd>
+    <!-- Main -->
+    <div id="main">
 
-        <dt>
-            @Html.DisplayNameFor(model => model.CourseName)
-        </dt>
+        <!-- One -->
+        <section id="one">
+            <header class="major">
+                <h2>
+                    <br />
+                    @Html.DisplayFor(model => model.CourseName)
+            
+                </h2>
+            </header>
+            <p></p>
+        </section>
 
-        <dd>
-            @Html.DisplayFor(model => model.CourseName)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.StartDate)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.StartDate)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.CourseAbout)
-        </dt>
-
-        <dd>
+        <!-- Two -->
+        <section id="two">
             @Html.DisplayFor(model => model.CourseAbout)
-        </dd>
+            <div class="row">
 
-    </dl>
-</div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.CourseID }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+            </div>
+            <ul class="actions"></ul>
+        </section>
+    </div>
+</section>
+
+<footer id="main-footer">
+    <hr />
+    <div class="col-lg-10 col-lg-offset-1 text-center">
+        <h2>
+            @Html.ActionLink("LEARNIT", "Index", "Home", null, new { @style = "text-decoration:none;" })
+        </h2>
+        <p>Moscow Kremlin<br>Russia</p>
+        <ul class="list-unstyled" id="contacts-mark">
+            <li>
+                <i class="fa fa-envelope-o fa-fw"></i>  <a href="mailto:vera_khatskevich@yahoo.com">vera_khatskevich@yahoo.com</a>
+            </li>
+        </ul>
+        <br>
+        <ul class="list-inline">
+            <li>
+                <a href="https://www.facebook.com/vera.khatskevich1"><i class="fa fa-facebook fa-fw fa-3x"></i></a>
+            </li>
+            <li>
+                <a href="https://www.twitter.come/veralady"><i class="fa fa-twitter fa-fw fa-3x"></i></a>
+            </li>
+            <li>
+                <a href="https://www.github.com/verakh"><i class="fa fa-dribbble fa-fw fa-3x"></i></a>
+            </li>
+        </ul>
+        <p class="text-muted">Copyright LEARNIT 2015</p>
+    </div>
+</footer>

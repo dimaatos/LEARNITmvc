@@ -1658,11 +1658,10 @@
 	hr {
 		border: 0;
 		border-bottom: solid 2px #efefef;
-		margin: 2em 0;
 	}
 
 		hr.major {
-			margin: 3em 0;
+			/*margin: 1em 0;*/
 		}
 
 	blockquote {
@@ -2468,15 +2467,19 @@
 		background-position: top left,							top left;
 		background-repeat: repeat,								no-repeat;
 		background-size: auto,								auto 100%;
-		color: rgba(255, 255, 255, 0.5);
+		color: rgba(255, 255, 255, 0.4);
 		height: 100%;
 		left: 0;
 		padding: 8em 4em 0 0;
-		position: fixed;
 		text-align: right;
 		top: 0;
-		width: 35%;
+		width: 28%;
+        position: absolute;
 	}
+
+    #my{
+        height: 100%;
+    }
 
 		#header strong, #header b {
 			color: #ffffff;
@@ -2550,18 +2553,21 @@
 		max-width: 54em;
 		padding: 8em 4em 4em 4em;
 		width: calc(100% - 35%);
+        position: relative;
 	}
 
 		#main > section {
 			border-top: solid 2px #efefef;
 			margin: 4em 0 0 0;
 			padding: 4em 0 0 0;
+             position: relative;
 		}
 
 			#main > section:first-child {
 				border-top: 0;
 				margin-top: 0;
 				padding-top: 0;
+                 position: relative;
 			}
 
 /* Poptrox */
