@@ -1,31 +1,100 @@
 ﻿@{
-    ViewBag.Title = "Home Page";
+    Layout = "~/Views/Shared/_LayoutMain.cshtml";
+    ViewBag.Title = "Home-LEARNIT";
 }
+<!-- Header -->
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="http://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-</div>
+<a id="menu-toggle" href="#" class="btn btn-dark btn-lg toggle"><i class="fa fa-bars"></i></a>
+<!--Static right menu -->
+<nav id="sidebar-wrapper" class="bar">
+    <ul class="sidebar-nav">
+        <a id="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle"><i class="fa fa-times"></i></a>
+        <li class="sidebar-brand">
+            <a href="#top" onclick=$("#menu-close").click();>LEARNIT</a>
+        </li>
+        <li>
+            <a href="#top" onclick=$("#menu-close").click();>Home</a>
+        </li>
+        <li>
+            <a href="#about" onclick=$("#menu-close").click();>About</a>
+        </li>
+        <li>
+            @Html.ActionLink("Browse Catalog", "Catalog", "BrowseCatalog")
+        </li>
+        <li>
+            <a href="#contacts-mark" onclick=$("#menu-close").click();>Contacts</a>
+        </li>
+    </ul>
+</nav>
+<!-- end Static right menu -->
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-    </div>
+
+<header id="main-header" class="header">
+    <div class="text-vertical-center">
+        <div class="main-cont" style="cursor: default;">
+            <h1>LEARN WITH US</h1>
+            <h2>Get knowledge, make friends, be a master.</h2>
+            <span id="hello">
+                <input type="text" class="  search-query form-control" placeholder="What would you like to learn?" autocomplete="off" spellcheck="false" dir="auto" />
+
+            </span>
+            <h3 class="browse-catalog-container">
+                <span>or</span>
+                <a class="browse-catalog-link" href="catalog.html">
+                    <span>@Html.ActionLink("Browse Catalog.", "Catalog", "BrowseCatalog")</span>
+                </a>
+            </h3>
+            <a class="scroll-down icon-arrow-left" data-offset="-45" href="#about">
+                <span class="hidden">Scroll Down</span>
+            </a>
 </div>
+    </div>
+</header>
+
+
+<!-- About -->
+
+<section id="about" class="about">
+    <div class="container" id="main-about">
+            <div class="my-about">
+                <h2>About LEARNIT</h2>
+                <p class="lead">LEARNIT is an awesome service that gives you an opportunity to be involevd in learning process with your teachers and your team more efficient and smooth! On LEARNIT you will find a course to take or you can create your own class and become a teacher! LEARNIT offers you all the nessesary tools to study or to teach. Make your life and study process better with LEARNIT! Get knowledge, make friends, be a master.</p>
+            <!-- /.row -->
+        </div>
+        <!-- /.container -->
+    </div>
+</section>
+><br /><br /><br /><br /><br /><br /><br /><br />
+<br /><br /><br />
+<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+
+
+
+<footer>
+    <hr />
+    <div class="col-lg-10 col-lg-offset-1 text-center">
+        <h2>
+            @Html.ActionLink("LEARNIT", "Index", "Home", null, new { @style = "text-decoration:none;" })
+        </h2>
+        <p>Moscow Kremlin<br>Russia</p>
+        <ul class="list-unstyled" id="contacts-mark">
+            <li>
+                <i class="fa fa-envelope-o fa-fw"></i>  <a href="mailto:vera_khatskevich@yahoo.com">vera_khatskevich@yahoo.com</a>
+            </li>
+        </ul>
+        <br>
+        <ul class="list-inline">
+            <li>
+                <a href="https://www.facebook.com/vera.khatskevich1"><i class="fa fa-facebook fa-fw fa-3x"></i></a>
+            </li>
+            <li>
+                <a href="https://www.twitter.come/veralady"><i class="fa fa-twitter fa-fw fa-3x"></i></a>
+            </li>
+            <li>
+                <a href="https://www.github.com/verakh"><i class="fa fa-dribbble fa-fw fa-3x"></i></a>
+            </li>
+        </ul>
+        <hr class="small">
+        <p class="text-muted">Copyright LEARNIT 2015</p>
+    </div>
+</footer>
