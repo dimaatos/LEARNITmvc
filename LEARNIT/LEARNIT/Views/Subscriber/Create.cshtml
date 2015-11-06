@@ -1,43 +1,135 @@
 ﻿@model LEARNIT.Models.Subscriber
 
 @{
-    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_LayoutMain.cshtml";
+    ViewBag.Title = "Send request";
 }
 
-<h2>Create</h2>
 
-@using (Html.BeginForm()) 
-{
-    @Html.AntiForgeryToken()
-    
-    <div class="form-horizontal">
-        <h4>Subscriber</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
-            @Html.LabelFor(model => model.UserEmail, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.UserEmail, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.UserEmail, "", new { @class = "text-danger" })
-            </div>
-        </div>
+<a id="menu-toggle" href="#" class="btn btn-dark btn-lg toggle"><i class="fa fa-bars"></i></a>
+<!--Static right menu -->
+<nav id="sidebar-wrapper" class="bar">
+    <ul class="sidebar-nav">
+        <a id="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle"><i class="fa fa-times"></i></a>
+        <li class="sidebar-brand">
+            @Html.ActionLink("LEARNIT", "Index", "Home")
+        </li>
+        <li>
+            @Html.ActionLink("Search Course", "Index", "Course")
+        </li>
+        <li>
+            <a href="#contacts-mark" onclick=$("#menu-close").click();>Contacts</a>
+        </li>
+    </ul>
+</nav>
+<!-- end Static right menu -->
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.UserName, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.UserName, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
-            </div>
-        </div>
 
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
-            </div>
+<section id="my">
+    <header id="header">
+        <a href="#" class="image avatar"><img src="~/Content/images/data.png" height="100px" /></a>
+
+        <div class="vert-menu-course-name">
+            <h1 class="user-name-area">
+                <span class="user-full-name">
+                    Subscribe
+                   </span>
+                <span class="username"></span>
+            </h1>
         </div>
+    </header>
+
+
+    <!-- Main -->
+    <div id="main">
+
+        <!-- One -->
+        <section id="one">
+            <header class="major">
+                <h2>
+                    <br />
+                   Send us request!
+
+                </h2>
+            </header>
+            <p></p>
+        </section>
+
+        <!-- Two -->
+        <section id="two">
+          
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="form-horizontal">
+
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.UserEmail, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.UserEmail, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.UserEmail, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.UserName, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.UserName, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.CourseRequest, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.CourseRequest, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.CourseRequest, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <input type="submit" value="Send" class="btn btn-default" />
+                        </div>
+                    </div>
+                </div>
+            }
+        </section>
     </div>
-}
+</section>
 
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
+
+
+
+   
+
+
+<footer id="main-footer">
+    <hr />
+    <div class="col-lg-10 col-lg-offset-1 text-center">
+        <h2>
+            @Html.ActionLink("LEARNIT", "Index", "Home", null, new { @style = "text-decoration:none;" })
+        </h2>
+        <p>Moscow Kremlin<br>Russia</p>
+        <ul class="list-unstyled" id="contacts-mark">
+            <li>
+                <i class="fa fa-envelope-o fa-fw"></i>  <a href="mailto:vera_khatskevich@yahoo.com">vera_khatskevich@yahoo.com</a>
+            </li>
+        </ul>
+        <br>
+        <ul class="list-inline">
+            <li>
+                <a href="https://www.facebook.com/vera.khatskevich1"><i class="fa fa-facebook fa-fw fa-3x"></i></a>
+            </li>
+            <li>
+                <a href="https://www.twitter.come/veralady"><i class="fa fa-twitter fa-fw fa-3x"></i></a>
+            </li>
+            <li>
+                <a href="https://www.github.com/verakh"><i class="fa fa-dribbble fa-fw fa-3x"></i></a>
+            </li>
+        </ul>
+        <p class="text-muted">Copyright LEARNIT 2015</p>
+    </div>
+</footer>

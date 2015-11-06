@@ -22,10 +22,10 @@ namespace LEARNIT.Models
         [Display(Name = "Name")]
         public string UserName { get; set; }
 
-        //public int PhotoId { get; set; }
-
-        //public virtual Photo Photo { get; set; }
-
+        [StringLength(200)]
+        [Display(Name = "Name of the Course")]
+        public string CourseRequest { get; set; }
+        
         public virtual ICollection<Subscription> Subscriptions { get; set; }
     }
 }

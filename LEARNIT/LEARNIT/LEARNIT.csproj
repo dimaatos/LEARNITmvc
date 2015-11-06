@@ -192,6 +192,10 @@
     <Compile Include="Migrations\201511060928269_DeletePhotoDone.Designer.cs">
       <DependentUpon>201511060928269_DeletePhotoDone.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201511061012591_CourseRequest.cs" />
+    <Compile Include="Migrations\201511061012591_CourseRequest.Designer.cs">
+      <DependentUpon>201511061012591_CourseRequest.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ApContext.cs" />
@@ -326,7 +330,6 @@
     <Content Include="Views\Category\Index.cshtml" />
     <Content Include="Views\Course\Create.cshtml" />
     <Content Include="Views\Course\Delete.cshtml" />
-    <Content Include="Views\Course\Details1.cshtml" />
     <Content Include="Views\Course\Edit.cshtml" />
     <Content Include="Views\Course\Index.cshtml" />
     <Content Include="Views\Teacher\Create.cshtml" />
@@ -348,11 +351,11 @@
     <Content Include="Views\Shared\_LayoutMain.cshtml" />
     <Content Include="Views\Course\Details.cshtml" />
     <Content Include="Views\Teacher\Details.cshtml" />
-    <Content Include="Views\Subscriber\Create.cshtml" />
-    <Content Include="Views\Subscriber\Delete.cshtml" />
+    <Content Include="Views\Subscriber\Index.cshtml" />
     <Content Include="Views\Subscriber\Details.cshtml" />
     <Content Include="Views\Subscriber\Edit.cshtml" />
-    <Content Include="Views\Subscriber\Index.cshtml" />
+    <Content Include="Views\Subscriber\Delete.cshtml" />
+    <Content Include="Views\Subscriber\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -372,6 +375,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201511060928269_DeletePhotoDone.resx">
       <DependentUpon>201511060928269_DeletePhotoDone.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201511061012591_CourseRequest.resx">
+      <DependentUpon>201511061012591_CourseRequest.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
