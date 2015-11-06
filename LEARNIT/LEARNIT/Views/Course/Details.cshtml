@@ -40,7 +40,12 @@
                     <span class="joined-data"></span>On Air since
                     <time>@Html.DisplayFor(model => model.StartDate)</time>
                 </li>
-            </ul>
+                <li class="data-detail">
+                    <span class="location-icon"></span>
+                    <span class="joined-data"></span>Course Category
+                    <p><a href="/category/details/@Html.DisplayFor(model => model.Teacher.TeacherID)">@Html.DisplayFor(model => model.Category.CategoryName)</a></p>
+                </li>
+                </ul>
         </div>
 
     </header>
