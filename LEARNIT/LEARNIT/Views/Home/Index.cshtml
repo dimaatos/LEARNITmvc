@@ -1,0 +1,147 @@
+﻿@model IEnumerable<LEARNIT.Models.Course>
+@{
+    Layout = "~/Views/Shared/_LayoutMain.cshtml";
+    ViewBag.Title = "Home-LEARNIT";
+}
+<!-- Header -->
+
+<a id="menu-toggle" href="#" class="btn btn-dark btn-lg toggle"><i class="fa fa-bars"></i></a>
+<!--Static right menu -->
+<nav id="sidebar-wrapper" class="bar">
+    <ul class="sidebar-nav">
+        <a id="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle"><i class="fa fa-times"></i></a>
+        <li class="sidebar-brand">
+            <a href="#top" onclick=$("#menu-close").click();>LEARNIT</a>
+        </li>
+        <li>
+            <a href="#top" onclick=$("#menu-close").click();>Home</a>
+        </li>
+        <li>
+            <a href="#about" onclick=$("#menu-close").click();>About</a>
+        </li>
+        <li>
+            @Html.ActionLink("Browse Catalog", "Index", "Course")
+        </li>
+        <li>
+            <a href="#contacts-mark" onclick=$("#menu-close").click();>Contacts</a>
+        </li>
+    </ul>
+</nav>
+<!-- end Static right menu -->
+
+
+<header id="main-header" class="header">
+    <div class="text-vertical-center">
+        <div class="main-cont" style="cursor: default;">
+            <h1>LEARN WITH US</h1>
+            <h2>Get knowledge, make friends, be a master.</h2>
+            <span id="hello">
+                <input type="text" class="search-query form-control" placeholder="What would you like to learn?" autocomplete="off" spellcheck="false" dir="auto" />
+
+            </span>
+            <h3 class="browse-catalog-container">
+                <span>or</span>
+                <a class="browse-catalog-link" href="catalog.html">
+                    <span>@Html.ActionLink("Browse Catalog.", "Index", "Course")</span>
+                </a>
+            </h3>
+            <a class="scroll-down icon-arrow-left" data-offset="-45" href="#popular-courses">
+                <span class="hidden">Scroll Down</span>
+            </a>
+</div>
+    </div>
+</header>
+
+<section class="courses-intro" id="popular-courses">
+    <div>
+        <h2>Sibscribe for our popular courses!</h2>
+        <div class="row" id="courses-row">
+           
+             <article class="6u 12u$(xsmall) work-item">
+
+                <a href="/Course/Details/2" class="image fit thumb">
+                <img src="@Url.Content(Request.Url.GetLeftPart(UriPartial.Authority))/Upload/Photo/U97gCOief2N3mvFIXHr1VnzPYSMWtB.jpg" alt="" />
+                </a>
+                <h3>Structure and Interpretation of Computer Programs</h3>
+                <p>Howard  Volovitz</p>
+            </article>
+
+            <article class="6u$ 12u$(xsmall) work-item">
+                <a href="/Course/Details/1" class="image fit thumb">
+                    <img src="@Url.Content(Request.Url.GetLeftPart(UriPartial.Authority))/Upload/Photo/7NQeR28msUdCHkvy5abrtizPD1qMfE.jpg" alt="" />
+                </a>
+                <h3>Mathematical Logic</h3>
+                <p>Sheldon Cooper</p>
+            </article>
+
+            <article class="6u 12u$(xsmall) work-item">
+                <a href="/Course/Details/3" class="image fit thumb">
+                    <img src="@Url.Content(Request.Url.GetLeftPart(UriPartial.Authority))/Upload/Photo/VxS6Bm4ROb2tvZf7N85IpC3lwMkWXD.jpg" alt="" />
+                </a>
+                <h3>Economic development in India</h3>
+                <p>Rajesh Ramayan Koothrappali</p>
+            </article>
+
+
+            <article class="6u$ 12u$(xsmall) work-item">
+                <a href="/Course/Details/4" class="image fit thumb">
+                    <img src="@Url.Content(Request.Url.GetLeftPart(UriPartial.Authority))/Upload/Photo/epCY3cHW6EbRmP5kTgQdhIxABy1qKo.jpg" alt="" />
+                </a>
+                <h3>History Of Princeton University</h3>
+                <p>Leonard Leakey Hofstadter</p>
+            </article>
+            <a class="scroll-down icon-arrow-left" id="scroll-for-dashboard" data-offset="-45" href="#about">
+                <span class="hidden">Scroll Down</span>
+            </a>
+        </div>
+     
+        </div>
+
+</section>
+
+<!-- About -->
+
+<section id="about" class="about">
+    <div class="container" id="main-about">
+        <div class="my-about">
+            <h2>About LEARNIT</h2>
+            <p class="lead">LEARNIT is an awesome service that gives you an opportunity to be involevd in learning process with your teachers and your team more efficient and smooth! On LEARNIT you will find a course to take or you can create your own class and become a teacher! LEARNIT offers you all the nessesary tools to study or to teach. Make your life and study process better with LEARNIT! Get knowledge, make friends, be a master.</p>
+            <!-- /.row -->
+        </div>
+        <!-- /.container -->
+    </div>
+    <a class="scroll-down icon-arrow-left" id="about-scroll" data-offset="-45" href="#contacts-mark">
+        <span class="hidden">Scroll Down</span>
+    </a>
+</section>
+
+
+
+
+<footer id="main-footer">
+    <hr />
+    <div class="col-lg-10 col-lg-offset-1 text-center">
+        <h2>
+            @Html.ActionLink("LEARNIT", "Index", "Home", null, new { @style = "text-decoration:none;" })
+        </h2>
+        <p>Moscow Kremlin<br>Russia</p>
+        <ul class="list-unstyled" id="contacts-mark">
+            <li>
+                <i class="fa fa-envelope-o fa-fw"></i>  <a href="mailto:vera_khatskevich@yahoo.com">vera_khatskevich@yahoo.com</a>
+            </li>
+        </ul>
+        <br>
+        <ul class="list-inline">
+            <li>
+                <a href="https://www.facebook.com/vera.khatskevich1"><i class="fa fa-facebook fa-fw fa-3x"></i></a>
+            </li>
+            <li>
+                <a href="https://www.twitter.come/veralady"><i class="fa fa-twitter fa-fw fa-3x"></i></a>
+            </li>
+            <li>
+                <a href="https://www.github.com/verakh"><i class="fa fa-dribbble fa-fw fa-1x"></i></a>
+            </li>
+        </ul>
+        <p class="text-muted">Copyright LEARNIT 2015</p>
+    </div>
+</footer>
