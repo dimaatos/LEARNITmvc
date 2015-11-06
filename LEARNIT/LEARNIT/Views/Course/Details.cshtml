@@ -65,12 +65,14 @@
         <section id="two">
             @Html.DisplayFor(model => model.CourseAbout)
             <div class="row">
-
+               @Html.ActionLink("Sibscribe!", "Create", "Subscriber", null, new { @id = "sibsribe-btn" }) 
+               @*<span id="sibsribe-btn"><input type="submit" value="Sibscribe!"></span>*@
             </div>
             <ul class="actions"></ul>
         </section>
     </div>
 </section>
+
 
 <footer id="main-footer">
     <hr />

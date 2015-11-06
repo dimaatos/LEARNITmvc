@@ -22,9 +22,9 @@ namespace LEARNIT.Models
         [Display(Name = "Name")]
         public string UserName { get; set; }
 
-        public int PhotoId { get; set; }
+        //public int PhotoId { get; set; }
 
-        public virtual Photo Photo { get; set; }
+        //public virtual Photo Photo { get; set; }
 
         public virtual ICollection<Subscription> Subscriptions { get; set; }
     }

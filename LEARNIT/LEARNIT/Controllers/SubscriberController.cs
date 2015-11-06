@@ -17,8 +17,7 @@ namespace LEARNIT.Controllers
         // GET: Subscriber
         public ActionResult Index()
         {
-            var subscribers = db.Subscribers.Include(s => s.Photo);
-            return View(subscribers.ToList());
+            return View(db.Subscribers.ToList());
         }
 
         // GET: Subscriber/Details/5
@@ -39,7 +38,6 @@ namespace LEARNIT.Controllers
         // GET: Subscriber/Create
         public ActionResult Create()
         {
-            ViewBag.PhotoId = new SelectList(db.Photos, "PhotoID", "PhotoName");
             return View();
         }
 
@@ -48,7 +46,7 @@ namespace LEARNIT.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "SubscriberID,UserEmail,UserName,PhotoId")] Subscriber subscriber)
+        public ActionResult Create([Bind(Include = "SubscriberID,UserEmail,UserName")] Subscriber subscriber)
         {
             if (ModelState.IsValid)
             {
@@ -57,7 +55,6 @@ namespace LEARNIT.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.PhotoId = new SelectList(db.Photos, "PhotoID", "PhotoName", subscriber.PhotoId);
             return View(subscriber);
         }
 
@@ -73,7 +70,6 @@ namespace LEARNIT.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.PhotoId = new SelectList(db.Photos, "PhotoID", "PhotoName", subscriber.PhotoId);
             return View(subscriber);
         }
 
@@ -82,7 +78,7 @@ namespace LEARNIT.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "SubscriberID,UserEmail,UserName,PhotoId")] Subscriber subscriber)
+        public ActionResult Edit([Bind(Include = "SubscriberID,UserEmail,UserName")] Subscriber subscriber)
         {
             if (ModelState.IsValid)
             {
@@ -90,7 +86,6 @@ namespace LEARNIT.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.PhotoId = new SelectList(db.Photos, "PhotoID", "PhotoName", subscriber.PhotoId);
             return View(subscriber);
         }
 

@@ -12,9 +12,6 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Photo.PhotoName)
-        </th>
-        <th>
             @Html.DisplayNameFor(model => model.UserEmail)
         </th>
         <th>
@@ -25,9 +22,6 @@
 
 @foreach (var item in Model) {
     <tr>
-        <td>
-            <img src="@Url.Content(Request.Url.GetLeftPart(UriPartial.Authority))/Upload/Photo/@Html.DisplayFor(modelItem => item.Photo.PhotoNameOnServer)" height="120px" />
-        </td>
         <td>
             @Html.DisplayFor(modelItem => item.UserEmail)
         </td>
