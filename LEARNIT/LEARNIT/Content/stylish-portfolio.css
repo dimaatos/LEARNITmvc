@@ -6,6 +6,28 @@ body {
 }
 
 
+
+#popular-courses {
+    height:auto;
+}
+
+#popular-courses h2 {
+    margin-bottom:15px;
+    margin-top:30px;
+
+}
+
+#popular-courses h3 {
+    color:#7b2020;
+
+}
+
+.h2-for-catalog{
+     font-size: 40px;
+    color:#303860;
+    font-family: "Josefin Sans",sans-serif;
+}
+
 /*  Fixed top Navigation */
 
 #menu-toggle {
@@ -177,7 +199,7 @@ font-weight: 700;
 .browse-catalog-container{
     margin-top: 3px;
     font-weight: 700;
-      margin-bottom: 140px;
+      margin-bottom: 10%;
 }
 
 .browse-catalog-container a{
@@ -192,19 +214,14 @@ font-weight: 700;
      vertical-align:middle;
      color: #000;
       font-family: 'Josefin Sans', sans-serif;
-      margin-bottom: 530px;
+      /*margin-bottom: 530px;*/
+      margin-bottom: 15%;
 }
 
 .courses-intro h2{
     text-align:center;
     margin-top: 2%;
     margin-bottom: 4%;
-}
-
-#scroll-for-dashboard{
-    text-align:center;
-    margin-left:37%;
-    margin-top: 11%;
 }
 
 .courses-intro{
@@ -237,6 +254,9 @@ font-weight: 700;
 }
 
 
+#main-footer h2 {
+    margin-top: 13%;
+}
 /*Header catalog page*/
 
 .header-catal{
@@ -846,8 +866,32 @@ hr.small {
 /* About */
 .my-about{
     width:100%;
+    margin-top:6%;
 
 }
+
+.my-about h2{
+    font-size: 45px;
+    color:#303860;
+}
+
+.my-about p{
+    font-size: 27px;
+}
+
+
+.my-about h1{
+    font-size: 35px;
+    color:#303860;
+}
+
+.my-about a{
+     color:#ae0001;
+}
+
+/*.link-highlight{
+    color:#ae0001;
+}*/
 
 .icon-arrow-left::before {
     content: url('assets/css/images/scroll-down.png');
@@ -857,7 +901,7 @@ hr.small {
 }
 
 #about-scroll{
-    margin-bottom: 30px;
+    margin-top: -70%;
 }
 
 .about {

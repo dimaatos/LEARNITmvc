@@ -12,6 +12,7 @@ namespace LEARNIT.Controllers
 {
     public class HomeController : Controller
     {
+       
         private ApContext db = new ApContext();
 
         public ActionResult Index(string searchString)
@@ -26,6 +27,9 @@ namespace LEARNIT.Controllers
                 courserus = courserus.Where(s => s.CourseName.Contains(searchString));
             }
 
+            ViewBag.Message = db.Courses.Count();
+            ViewBag.Categories = db.Categories.Count();
+            ViewBag.Teachers = db.Teachers.Count();
             return View(courserus.ToList());
         }
 

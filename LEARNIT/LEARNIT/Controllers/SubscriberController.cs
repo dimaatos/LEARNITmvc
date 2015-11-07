@@ -47,30 +47,19 @@ namespace LEARNIT.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        
-        public ActionResult Create([Bind(Include = "SubscriptionID,CourseID,SubscriberID")] Subscription subscription)
+
+
+        public ActionResult Create([Bind(Include = "SubscriberID,UserEmail,UserName,CourseRequest")] Subscriber subscriber)
         {
             if (ModelState.IsValid)
             {
-                db.Subscriptions.Add(subscription);
+                db.Subscribers.Add(subscriber);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+
+                return RedirectToAction("ByCategory", "Course");
             }
 
-            ViewBag.CourseID = new SelectList(db.Courses, "CourseID", "CourseName", subscription.CourseID);
-            ViewBag.SubscriberID = new SelectList(db.Subscribers, "SubscriberID", "UserEmail", subscription.SubscriberID);
-            return View(subscription);
-
-        //public ActionResult Create([Bind(Include = "SubscriberID,UserEmail,UserName,CourseRequest")] Subscriber subscriber)
-        //{
-        //    if (ModelState.IsValid)
-        //    {
-        //        db.Subscribers.Add(subscriber);
-        //        db.SaveChanges();
-        //        return RedirectToAction("Index");
-        //    }
-
-        //    return View(subscriber);
+            return View(subscriber);
         }
 
         // GET: Subscriber/Edit/5

@@ -21,7 +21,7 @@
             <a href="#about" onclick=$("#menu-close").click();>About</a>
         </li>
         <li>
-            @Html.ActionLink("Browse Catalog", "Catalog", "BrowseCatalog")
+            @Html.ActionLink("Browse Catalog", "ByCategory", "Course")
         </li>
         <li>
             <a href="#contacts-mark" onclick=$("#menu-close").click();>Contacts</a>
@@ -31,11 +31,13 @@
 <!-- end Static right menu -->
 
 
+<section class="courses-intro">
+    <div  id="popular-courses">
+        <h2 class="h2-for-catalog" >Sibscribe for your favorite courses!</h2>
+        <h3 style="vertical-align: middle; text-align:center">
+            Browse <strong><a href="/course/ByCategory">Catalog by categories</a></strong> and lean more about our amazing <strong><a href="/teacher">Teachers</a></strong>
+        </h3>
 
-
-<section class="courses-intro" id="popular-courses">
-    <div>
-        <h2>Sibscribe for your favorite courses!</h2>
         <h2>
             @using (Html.BeginForm())
             {
@@ -45,23 +47,24 @@
                 </p>
             }
         </h2>
-    </div>
-        
-           
+
         @foreach (var item in Model)
         {
-                    <div id="courses-row">
-                        <div class="row" id="gallery-row">
-                            <article class="70u 12u$(xsmall) work-item" id="search-dashboard">
-                                <a href="/Course/Details/@Html.DisplayFor(modelItem  => item.CourseID)" class="image fit thumb">
-                                    <img src="@Url.Content(Request.Url.GetLeftPart(UriPartial.Authority))/Upload/Photo/@Html.DisplayFor(modelItem => item.Photo.PhotoNameOnServer)" alt="" />
-                                </a>
-                                <h3>@Html.DisplayFor(modelItem => item.CourseName)</h3>
-                                <p><a href="/teacher/details/@Html.DisplayFor(modelItem => item.Teacher.TeacherID)">@Html.DisplayFor(modelItem => item.Teacher.TeacherName)</a></p>
-                            </article>
-                        </div>
-                    </div>
-         }
+            <div id="courses-row">
+                <div class="row" id="gallery-row">
+                    <article class="70u 12u$(xsmall) work-item" id="search-dashboard">
+                        <a href="/Course/Details/@Html.DisplayFor(modelItem  => item.CourseID)" class="image fit thumb">
+                            <img src="@Url.Content(Request.Url.GetLeftPart(UriPartial.Authority))/Upload/Photo/@Html.DisplayFor(modelItem => item.Photo.PhotoNameOnServer)" alt="" />
+                        </a>
+                        <h3>@Html.DisplayFor(modelItem => item.CourseName)</h3>
+                        <p><a href="/teacher/details/@Html.DisplayFor(modelItem => item.Teacher.TeacherID)">@Html.DisplayFor(modelItem => item.Teacher.TeacherName)</a></p>
+                    </article>
+                </div>
+            </div>
+        }
+
+    </div>
+
 
 
 </section>

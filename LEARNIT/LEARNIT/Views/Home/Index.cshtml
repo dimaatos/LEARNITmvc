@@ -20,7 +20,7 @@
             <a href="#about" onclick=$("#menu-close").click();>About</a>
         </li>
         <li>
-            @Html.ActionLink("Browse Catalog", "ByName", "Course")
+            @Html.ActionLink("Browse Catalog", "ByCategory", "Course")
         </li>
         <li>
             <a href="#contacts-mark" onclick=$("#menu-close").click();>Contacts</a>
@@ -36,13 +36,13 @@
             <h1>LEARN WITH US</h1>
             <h2>Get knowledge, make friends, be a master.</h2>
             <span id="hello">
-                <input type="text" class="search-query form-control" placeholder="What would you like to learn?" autocomplete="off" spellcheck="false" dir="auto" />
+                <input type="text" class="search-query form-control" placeholder="What would you like to learn?" autocomplete="off" spellcheck="false" dir="auto" style="cursor:default"; />
 
             </span>
             <h3 class="browse-catalog-container">
-                <span>or</span>
+                <span></span>
                 <a class="browse-catalog-link" href="catalog.html">
-                    <span>@Html.ActionLink("Browse Catalog.", "ByName", "Course")</span>
+                    <span>@Html.ActionLink("Browse Catalog.", "ByCategory", "Course")</span>
                 </a>
             </h3>
             <a class="scroll-down icon-arrow-left" data-offset="-45" href="#about">
@@ -58,9 +58,14 @@
     <div class="container" id="main-about">
         <div class="my-about">
             <h2>About LEARNIT</h2>
-            <p class="lead">LEARNIT is an awesome service that gives you an opportunity to be involevd in learning process with your teachers and your team more efficient and smooth! On LEARNIT you will find a course to take or you can create your own class and become a teacher! LEARNIT offers you all the nessesary tools to study or to teach. Make your life and study process better with LEARNIT! Get knowledge, make friends, be a master.</p>
+            <p class="lead">LEARNIT is an awesome service that gives you an opportunity to be involevd in learning process with your teachers and your team more efficient and smooth! On LEARNIT you can find any courses to take! LEARNIT offers you all the nessesary tools to study. Make your life and study process better with LEARNIT! Get knowledge, make friends, be a master.</p>
             <!-- /.row -->
-        </div>
+            <h1 style="vertical-align: middle; text-align:center">
+                We offer <strong><a href="/course/ByName">@ViewBag.Message</a></strong> amazing courses created by our <strong><a href="/teacher">@ViewBag.Teachers</a></strong> high-level teachers  in <strong><a href="/course/ByCategory">@ViewBag.Categories</a></strong> areas
+            </h1>
+
+            <h2>
+</div>
         <!-- /.container -->
     </div>
     <a class="scroll-down icon-arrow-left" id="about-scroll" data-offset="-45" href="#contacts-mark">
@@ -75,7 +80,8 @@
     <hr />
     <div class="col-lg-10 col-lg-offset-1 text-center">
         <h2>
-            @Html.ActionLink("LEARNIT", "Index", "Home", null, new { @style = "text-decoration:none;" })
+            CONTACT US 
+            @*@Html.ActionLink("CONTACT US", "Index", "Home", null, new { @style = "text-decoration:none;" })*@
         </h2>
         <p>Moscow Kremlin<br>Russia</p>
         <ul class="list-unstyled" id="contacts-mark">
