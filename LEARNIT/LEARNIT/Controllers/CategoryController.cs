@@ -14,12 +14,13 @@ namespace LEARNIT.Controllers
     {
         private ApContext db = new ApContext();
 
-        // GET: Category
+        //GET: Category
         public ActionResult Index()
         {
             var categories = db.Categories.Include(c => c.Field);
             return View(categories.ToList());
         }
+        
 
         // GET: Category/Details/5
         public ActionResult Details(int? id)

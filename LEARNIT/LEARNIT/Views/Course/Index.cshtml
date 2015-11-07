@@ -1,99 +1,64 @@
 ﻿@model IEnumerable<LEARNIT.Models.Course>
+
 @{
-    Layout = "~/Views/Shared/_LayoutMain.cshtml";
-    ViewBag.Title = "Home-LEARNIT";
+    ViewBag.Title = "Index";
 }
 
-<!-- Header -->
+<h2>Index</h2>
 
-<a id="menu-toggle" href="#" class="btn btn-dark btn-lg toggle"><i class="fa fa-bars"></i></a>
-<!--Static right menu -->
-<nav id="sidebar-wrapper" class="bar">
-    <ul class="sidebar-nav">
-        <a id="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle"><i class="fa fa-times"></i></a>
-        <li class="sidebar-brand">
-            <a href="#top" onclick=$("#menu-close").click();>LEARNIT</a>
-        </li>
-        <li>
-            <a href="#top" onclick=$("#menu-close").click();>Home</a>
-        </li>
-        <li>
-            <a href="#about" onclick=$("#menu-close").click();>About</a>
-        </li>
-        <li>
-            @Html.ActionLink("Browse Catalog", "Catalog", "BrowseCatalog")
-        </li>
-        <li>
-            <a href="#contacts-mark" onclick=$("#menu-close").click();>Contacts</a>
-        </li>
-    </ul>
-</nav>
-<!-- end Static right menu -->
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Photo.PhotoName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Category.Field.FieldName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Category.CategoryName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Teacher.TeacherName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CourseName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StartDate)
+        </th>
+        <th></th>
+    </tr>
 
-
-
-
-<section class="courses-intro" id="popular-courses">
-    <div>
-        <h2>Sibscribe for your favorite courses!</h2>
-        <h2>
-            @using (Html.BeginForm())
-            {
-            <p>
-                 @Html.TextBox("SearchString", null, new { @style = "width: 250px; height: 46px; border-radius:8px; border-color: 2px solid #AAAAAA;" })
-                <span><input type="submit" value="Search by name"></span>
-            </p>
-        }
-        </h2>
+@foreach (var item in Model) {
+    <tr>
+        <th>
+            <img src="@Url.Content(Request.Url.GetLeftPart(UriPartial.Authority))/Upload/Photo/@Html.DisplayFor(modelItem => item.Photo.PhotoNameOnServer)" alt="" height="100px;" />
+        </th>
         
-           
-@foreach (var item in Model)
-{
-    <div class="row" id="courses-row">
-            <article class="6u 12u$(xsmall) work-item" id="search-dashboard">
-                <a href="/Course/Details/@Html.DisplayFor(modelItem  => item.CourseID)" class="image fit thumb">
-                    <img src="@Url.Content(Request.Url.GetLeftPart(UriPartial.Authority))/Upload/Photo/@Html.DisplayFor(modelItem => item.Photo.PhotoNameOnServer)" alt="" />
-                </a>
-                <h3>@Html.DisplayFor(modelItem => item.CourseName)</h3>
-                <p><a href="/teacher/details/@Html.DisplayFor(modelItem => item.Teacher.TeacherID)">@Html.DisplayFor(modelItem => item.Teacher.TeacherName)</a></p>
-            </article>
-
-        </div>           
+        <th>
+            @Html.DisplayFor(modelItem => item.Category.Field.FieldName)
+        </th>
+        <td>
+            @Html.DisplayFor(modelItem => item.Category.CategoryName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Teacher.TeacherName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CourseName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StartDate)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.CourseID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.CourseID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.CourseID })
+        </td>
+    </tr>
 }
 
-    </div>
-</section>
-
-<section>
-    <div id="this">
-        <hr/>
-        <footer id="main-footer">
-
-        <div class="col-lg-10 col-lg-offset-1 text-center">
-            <h2>
-                @Html.ActionLink("LEARNIT", "Index", "Home", null, new { @style = "text-decoration:none;" })
-            </h2>
-            <p>Moscow Kremlin<br>Russia</p>
-            <ul class="list-unstyled" id="contacts-mark">
-                <li>
-                    <i class="fa fa-envelope-o fa-fw"></i>  <a href="mailto:vera_khatskevich@yahoo.com">vera_khatskevich@yahoo.com</a>
-                </li>
-            </ul>
-            <br>
-            <ul class="list-inline">
-                <li>
-                    <a href="https://www.facebook.com/vera.khatskevich1"><i class="fa fa-facebook fa-fw fa-3x"></i></a>
-                </li>
-                <li>
-                    <a href="https://www.twitter.come/veralady"><i class="fa fa-twitter fa-fw fa-3x"></i></a>
-                </li>
-                <li>
-                    <a href="https://www.github.com/verakh"><i class="fa fa-dribbble fa-fw fa-1x"></i></a>
-                </li>
-            </ul>
-            <p class="text-muted">Copyright LEARNIT 2015</p>
-        </div>
-        </footer>
-    </div>
-
-</section>
+</table>

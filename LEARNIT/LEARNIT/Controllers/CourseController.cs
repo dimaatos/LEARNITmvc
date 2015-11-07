@@ -19,8 +19,20 @@ namespace LEARNIT.Controllers
             return View();
         }
 
+
         // GET: Course
-        public ActionResult Index(string searchString)
+        public ActionResult Index()
+        {
+            var courses = db.Courses.Include(c => c.Category).Include(c => c.Photo).Include(c => c.Teacher).Include(c => c.Category.Field.FieldName);
+
+            return View(db.Courses.ToList());
+        }
+
+
+
+
+
+        public ActionResult ByName(string searchString)
         {
             //var courses = db.Courses.Include(c => c.Category).Include(c => c.Photo).Include(c => c.Teacher);
 
@@ -34,6 +46,25 @@ namespace LEARNIT.Controllers
 
             return View(courserus.ToList());
         }
+        
+
+        public ActionResult ByCategory(int? SelectedCategory)
+        {
+            var categories = db.Categories.OrderBy(q => q.CategoryName).ToList();
+
+            ViewBag.SelectedCategory = new SelectList(categories, "CategoryID", "CategoryName", SelectedCategory);
+            int CategoryID = SelectedCategory.GetValueOrDefault();
+
+            IQueryable<Course> courses = db.Courses
+                .Where(c => !SelectedCategory.HasValue || c.CategoryId == CategoryID)
+                .OrderBy(d => d.CourseID)
+                .Include(d => d.Category);
+            var sql = courses.ToString();
+
+
+            return View(courses.ToList());
+        }
+
 
         // GET: Course/Details/5
         public ActionResult Details(int? id)

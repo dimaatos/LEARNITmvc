@@ -93,7 +93,28 @@ position:fixed;
 /*  End of Fixed top Navigation */
 
 #search-dashboard{
-    margin-left: 27%;
+    margin-left: 15%;
+
+}
+
+#mine{
+  display:table-cell;
+    float: left;
+}
+
+
+#courses-row-main{
+    width:60%;
+    margin-left:10%;
+}
+
+#article-main{
+    margin: 3%;
+}
+
+
+.main-div{
+    width:30%;
 }
 
 /* Header main page */
@@ -191,6 +212,7 @@ font-weight: 700;
     height: 100%;
 }
 
+
 .display-courses-div{
     display: table-cell;
     vertical-align:central;
@@ -199,9 +221,15 @@ font-weight: 700;
 }
 
 #courses-row{
-    width: 70%;
-    margin-left: 20%;
+    width: 20%;
+    float:left;
+    margin-left:7%;
+    display:inline;
+}
 
+#gallery-row{
+    width:100%;
+    margin-left: -5%;
 }
 
 #main-footer{
@@ -843,6 +871,7 @@ hr.small {
 .rows{
    margin-top: -10px;
 }
+
 
 .rows ul li{
    margin-top: 25px;
