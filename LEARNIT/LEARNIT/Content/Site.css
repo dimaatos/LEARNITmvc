@@ -22,3 +22,8 @@ select,
 textarea {
     max-width: 280px;
 }
+
+
+#nav-bar-top{
+    background-color:rgba(238, 222, 222, 0.83)
+}
