@@ -19,14 +19,7 @@ namespace LEARNIT.Controllers
             return View();
         }
 
-
-        // GET: Course
-        public ActionResult Index()
-        {
-            var courses = db.Courses.OrderBy(q=>q.CourseName).Include(c => c.Category).Include(c => c.Photo).Include(c => c.Teacher).Include(c => c.Category.Field.FieldName);
-
-            return View(db.Courses.ToList());
-        }
+        
 
 
         public ActionResult ByName(string searchString)
@@ -50,11 +43,38 @@ namespace LEARNIT.Controllers
             ViewBag.Teachers = db.Teachers.Count();
             return View(courserus.OrderBy(q => q.CourseName).ToList());
         }
-        
+
+        public ActionResult AdminByName(string searchString)
+        {
+            //var courses = db.Courses.Include(c => c.Category).Include(c => c.Photo).Include(c => c.Teacher);
+
+            var courserus = from s in db.Courses.OrderBy(q => q.CourseName)
+                            select s;
+
+            int total = db.Courses.Count();
+
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                courserus = courserus.Where(s => s.CourseName.Contains(searchString));
+
+            }
+
+            ViewBag.Subscribers = db.Subscribers.Count();
+            ViewBag.Subscriptions = db.Subscriptions.Count();
+            ViewBag.Courses = db.Courses.Count();
+            ViewBag.Categories = db.Categories.Count();
+            ViewBag.Teachers = db.Teachers.Count();
+
+            return View(courserus.OrderBy(q => q.CourseName).ToList());
+        }
+
+
 
         public ActionResult ByCategory(int? SelectedCategory)
         {
             var categories = db.Categories.OrderBy(q => q.CategoryName).ToList();
+
 
             ViewBag.SelectedCategory = new SelectList(categories, "CategoryID", "CategoryName", SelectedCategory);
             int CategoryID = SelectedCategory.GetValueOrDefault();
@@ -70,7 +90,56 @@ namespace LEARNIT.Controllers
         }
 
 
-    
+        public ActionResult AdminByTeacher(int? SelectedTeacher)
+        {
+            var teachers = db.Teachers.OrderBy(q => q.TeacherName).ToList();
+
+
+            ViewBag.SelectedTeacher = new SelectList(teachers, "TeacherID", "TeacherName", SelectedTeacher);
+            int TeacherID = SelectedTeacher.GetValueOrDefault();
+
+            IQueryable<Course> courses = db.Courses
+                .Where(c => !SelectedTeacher.HasValue || c.TeacherId == TeacherID)
+                .OrderBy(d => d.CourseName)
+                .Include(d => d.Teacher);
+            var sql = courses.ToString();
+
+
+            ViewBag.Subscribers = db.Subscribers.Count();
+            ViewBag.Subscriptions = db.Subscriptions.Count();
+            ViewBag.Courses = db.Courses.Count();
+            ViewBag.Categories = db.Categories.Count();
+            ViewBag.Teachers = db.Teachers.Count();
+
+            return View(courses.ToList());
+        }
+
+
+
+        public ActionResult AdminByCategory(int? SelectedCategory)
+        {
+            var categories = db.Categories.OrderBy(q => q.CategoryName).ToList();
+
+            ViewBag.SelectedCategory = new SelectList(categories, "CategoryID", "CategoryName", SelectedCategory);
+            int CategoryID = SelectedCategory.GetValueOrDefault();
+
+            IQueryable<Course> courses = db.Courses
+                .Where(c => !SelectedCategory.HasValue || c.CategoryId == CategoryID)
+                .OrderBy(d => d.CourseName)
+                .Include(d => d.Category);
+            var sql = courses.ToString();
+
+            ViewBag.Subscribers = db.Subscribers.Count();
+            ViewBag.Subscriptions = db.Subscriptions.Count();
+            ViewBag.Courses = db.Courses.Count();
+            ViewBag.Categories = db.Categories.Count();
+            ViewBag.Teachers = db.Teachers.Count();
+
+            return View(courses.ToList());
+        }
+
+
+
 
         // GET: Course/Details/5
         public ActionResult Details(int? id)

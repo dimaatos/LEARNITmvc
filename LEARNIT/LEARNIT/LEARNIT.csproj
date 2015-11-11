@@ -273,6 +273,7 @@
     <Content Include="Content\assets\sass\main.scss" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Content\bootstrap.css.map" />
+    <Content Include="ClassDiagram1.cd" />
     <None Include="Scripts\jquery-2.1.4.intellisense.js" />
     <Content Include="Scripts\jquery-2.1.4.js" />
     <Content Include="Scripts\jquery-2.1.4.min.js" />
@@ -356,7 +357,9 @@
     <Content Include="Views\Subscriber\Create.cshtml" />
     <Content Include="Views\Category\Index.cshtml" />
     <Content Include="Views\Course\ByCategory.cshtml" />
-    <Content Include="Views\Course\Index.cshtml" />
+    <Content Include="Views\Course\AdminByCategory.cshtml" />
+    <Content Include="Views\Course\AdminByName.cshtml" />
+    <Content Include="Views\Course\AdminByTeacher.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
