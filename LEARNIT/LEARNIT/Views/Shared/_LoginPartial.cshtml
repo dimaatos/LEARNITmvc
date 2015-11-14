@@ -11,7 +11,18 @@
         </li>
         <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
     </ul>
-                        
+
+        <ul class="nav navbar-nav" style="color: #585858;">
+            <li>@Html.ActionLink("Courses by Category", "AdminByCategory", "Course")</li>
+            <li>@Html.ActionLink("Courses by Name", "AdminByName", "Course")</li>
+            <li>@Html.ActionLink("Courses by Teacher", "AdminByTeacher", "Course")</li>
+            <li>@Html.ActionLink("Scientific Fields", "Index", "Field")</li>
+            <li>@Html.ActionLink("Categories", "Index", "Category")</li>
+            <li>@Html.ActionLink("Teachers", "Index", "Teacher")</li>
+            <li>@Html.ActionLink("Subscribers", "Index", "Subscriber")</li>
+            <li>@Html.ActionLink("Subscriptions", "Index", "Subscription")</li>
+            <li>@Html.ActionLink("Photos", "Index", "Photo")</li>
+        </ul>
     }
 }
 else
@@ -20,4 +31,6 @@ else
         <li>@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
         <li>@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
     </ul>
+
+ 
 }

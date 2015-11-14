@@ -18,6 +18,11 @@ namespace LEARNIT.Controllers
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
 
+        public ActionResult Index()
+        {
+            return View();
+        }
+
         public AccountController()
         {
         }

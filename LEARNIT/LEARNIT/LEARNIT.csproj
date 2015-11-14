@@ -167,8 +167,6 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
-    <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
-    <Compile Include="Areas\User\UserAreaRegistration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\CourseController.cs" />
@@ -276,8 +274,6 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="ClassDiagram1.cd" />
-    <Content Include="Areas\Admin\Views\web.config" />
-    <Content Include="Areas\User\Views\web.config" />
     <None Include="Scripts\jquery-2.1.4.intellisense.js" />
     <Content Include="Scripts\jquery-2.1.4.js" />
     <Content Include="Scripts\jquery-2.1.4.min.js" />
@@ -322,7 +318,6 @@
     <Content Include="Views\Manage\SetPassword.cshtml" />
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
-    <Content Include="Views\Shared\_LoginPartial2.cshtml" />
     <Content Include="Views\Field\Create.cshtml" />
     <Content Include="Views\Field\Delete.cshtml" />
     <Content Include="Views\Field\Details.cshtml" />
@@ -364,17 +359,11 @@
     <Content Include="Views\Course\AdminByCategory.cshtml" />
     <Content Include="Views\Course\AdminByName.cshtml" />
     <Content Include="Views\Course\AdminByTeacher.cshtml" />
-    <Content Include="Views\Shared\_LoginPartial - Copy.cshtml" />
-    <Content Include="Views\Shared\_Register.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Account\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\Admin\Controllers\" />
-    <Folder Include="Areas\Admin\Models\" />
-    <Folder Include="Areas\Admin\Views\Shared\" />
-    <Folder Include="Areas\User\Controllers\" />
-    <Folder Include="Areas\User\Models\" />
-    <Folder Include="Areas\User\Views\Shared\" />
     <Folder Include="Upload\Photo\" />
   </ItemGroup>
   <ItemGroup>
