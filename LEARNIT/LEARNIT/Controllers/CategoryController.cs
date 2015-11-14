@@ -38,6 +38,7 @@ namespace LEARNIT.Controllers
         }
 
         // GET: Category/Create
+        [Authorize]
         public ActionResult Create()
         {
             ViewBag.FieldId = new SelectList(db.Fields, "FieldID", "FieldName");
@@ -49,6 +50,7 @@ namespace LEARNIT.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public ActionResult Create([Bind(Include = "CategoryID,CategoryName,FieldId")] Category category)
         {
             if (ModelState.IsValid)
@@ -63,6 +65,7 @@ namespace LEARNIT.Controllers
         }
 
         // GET: Category/Edit/5
+        [Authorize]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -83,6 +86,7 @@ namespace LEARNIT.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public ActionResult Edit([Bind(Include = "CategoryID,CategoryName,FieldId")] Category category)
         {
             if (ModelState.IsValid)
@@ -96,6 +100,7 @@ namespace LEARNIT.Controllers
         }
 
         // GET: Category/Delete/5
+        [Authorize]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -113,6 +118,7 @@ namespace LEARNIT.Controllers
         // POST: Category/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public ActionResult DeleteConfirmed(int id)
         {
             Category category = db.Categories.Find(id);
@@ -121,6 +127,7 @@ namespace LEARNIT.Controllers
             return RedirectToAction("Index");
         }
 
+        [Authorize]
         protected override void Dispose(bool disposing)
         {
             if (disposing)

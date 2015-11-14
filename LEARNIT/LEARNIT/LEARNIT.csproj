@@ -359,8 +359,8 @@
     <Content Include="Views\Course\AdminByCategory.cshtml" />
     <Content Include="Views\Course\AdminByName.cshtml" />
     <Content Include="Views\Course\AdminByTeacher.cshtml" />
-    <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Account\Index.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

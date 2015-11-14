@@ -36,6 +36,7 @@ namespace LEARNIT.Controllers
         }
 
         // GET: Field/Create
+        [Authorize]
         public ActionResult Create()
         {
             return View();
@@ -46,6 +47,7 @@ namespace LEARNIT.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public ActionResult Create([Bind(Include = "FieldID,FieldName")] Field field)
         {
             if (ModelState.IsValid)
@@ -59,6 +61,7 @@ namespace LEARNIT.Controllers
         }
 
         // GET: Field/Edit/5
+        [Authorize]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -78,6 +81,7 @@ namespace LEARNIT.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public ActionResult Edit([Bind(Include = "FieldID,FieldName")] Field field)
         {
             if (ModelState.IsValid)
@@ -90,6 +94,7 @@ namespace LEARNIT.Controllers
         }
 
         // GET: Field/Delete/5
+        [Authorize]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -107,6 +112,7 @@ namespace LEARNIT.Controllers
         // POST: Field/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public ActionResult DeleteConfirmed(int id)
         {
             Field field = db.Fields.Find(id);
@@ -115,6 +121,7 @@ namespace LEARNIT.Controllers
             return RedirectToAction("Index");
         }
 
+        [Authorize]
         protected override void Dispose(bool disposing)
         {
             if (disposing)

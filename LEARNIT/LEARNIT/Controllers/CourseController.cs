@@ -44,6 +44,7 @@ namespace LEARNIT.Controllers
             return View(courserus.OrderBy(q => q.CourseName).ToList());
         }
 
+        [Authorize]
         public ActionResult AdminByName(string searchString)
         {
             //var courses = db.Courses.Include(c => c.Category).Include(c => c.Photo).Include(c => c.Teacher);
@@ -89,7 +90,7 @@ namespace LEARNIT.Controllers
             return View(courses.ToList());
         }
 
-
+        [Authorize]
         public ActionResult AdminByTeacher(int? SelectedTeacher)
         {
             var teachers = db.Teachers.OrderBy(q => q.TeacherName).ToList();
@@ -115,7 +116,7 @@ namespace LEARNIT.Controllers
         }
 
 
-
+        [Authorize]
         public ActionResult AdminByCategory(int? SelectedCategory)
         {
             var categories = db.Categories.OrderBy(q => q.CategoryName).ToList();
@@ -142,6 +143,7 @@ namespace LEARNIT.Controllers
 
 
         // GET: Course/Details/5
+        [Authorize]
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -157,6 +159,7 @@ namespace LEARNIT.Controllers
         }
 
         // GET: Course/Create
+        [Authorize]
         public ActionResult Create()
         {
             ViewBag.CategoryId = new SelectList(db.Categories, "CategoryID", "CategoryName");
@@ -170,6 +173,7 @@ namespace LEARNIT.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public ActionResult Create([Bind(Include = "CourseID,CourseName,StartDate,CourseAbout,CategoryId,TeacherId,PhotoId")] Course course)
         {
             if (ModelState.IsValid)
@@ -186,6 +190,7 @@ namespace LEARNIT.Controllers
         }
 
         // GET: Course/Edit/5
+        [Authorize]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -208,6 +213,7 @@ namespace LEARNIT.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public ActionResult Edit([Bind(Include = "CourseID,CourseName,StartDate,CourseAbout,CategoryId,TeacherId,PhotoId")] Course course)
         {
             if (ModelState.IsValid)
@@ -223,6 +229,7 @@ namespace LEARNIT.Controllers
         }
 
         // GET: Course/Delete/5
+        [Authorize]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -240,6 +247,7 @@ namespace LEARNIT.Controllers
         // POST: Course/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public ActionResult DeleteConfirmed(int id)
         {
             Course course = db.Courses.Find(id);
@@ -248,6 +256,7 @@ namespace LEARNIT.Controllers
             return RedirectToAction("Index");
         }
 
+        [Authorize]
         protected override void Dispose(bool disposing)
         {
             if (disposing)

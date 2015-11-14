@@ -37,6 +37,7 @@ namespace PhotosUpload.Controllers
         }
 
         // GET: /Photo/Upload
+        [Authorize]
         public ActionResult Upload()
         {
             return View();
@@ -46,6 +47,7 @@ namespace PhotosUpload.Controllers
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [AcceptVerbs(HttpVerbs.Post)]
+        [Authorize]
         public ActionResult UploadImage()
         {
             if (Request.Files["file"].ContentLength > 0)
@@ -74,6 +76,7 @@ namespace PhotosUpload.Controllers
         }
 
         // GET: /Photo/Edit/5
+        [Authorize]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -93,6 +96,7 @@ namespace PhotosUpload.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public ActionResult Edit(int? id, string PhotoName)
         {
             Photo photo = db.Photos.Find(id);
@@ -112,6 +116,7 @@ namespace PhotosUpload.Controllers
         }
 
         // GET: /Photo/Delete/5
+        [Authorize]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -129,6 +134,7 @@ namespace PhotosUpload.Controllers
         // POST: /Photo/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public ActionResult DeleteConfirmed(int id)
         {
             Photo photo = db.Photos.Find(id);
@@ -137,6 +143,7 @@ namespace PhotosUpload.Controllers
             return RedirectToAction("Index");
         }
 
+        [Authorize]
         protected override void Dispose(bool disposing)
         {
             if (disposing)
