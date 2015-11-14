@@ -1,26 +1,24 @@
 ﻿@model IEnumerable<LEARNIT.Models.Course>
 @{
-    Layout = "~/Views/Shared/_LayoutMain.cshtml";
+    Layout = "~/Views/Shared/_LayoutPages.cshtml";
     ViewBag.Title = "Home-LEARNIT";
 }
 
 
 <section class="courses-intro">
-    <div  id="popular-courses">
-        <h2 class="h2-for-catalog" >Sibscribe for your favorite courses!</h2>
+    <div id="popular-courses">
+        <h2 class="h2-for-catalog">Sibscribe for your favorite courses!</h2>
         <h3 style="vertical-align: middle; text-align:center">
-            Browse <strong><a href="/course/ByCategory">Catalog by categories</a></strong> or search <strong><a href="/course/byTeacher">by Teacher</a></strong>
+            Browse <strong><a href="/course/ByCategory">Catalog by categories</a></strong> or search <strong><a href="/course/ByName"> by name</a></strong>
         </h3>
 
-        <h2>
-            @using (Html.BeginForm())
+        @using (Html.BeginForm())
             {
-                <p>
-                    @Html.TextBox("SearchString", null, new { @style = "width: 250px; height: 46px; border-radius:8px; border-color: 2px solid #AAAAAA;" })
-                    <span><input type="submit" value="Search by name"></span>
-                </p>
-            }
-        </h2>
+            <div style="width: 250px; height: 46px; border-radius:8px; border-color: 2px solid #AAAAAA; margin-left: 41%; margin-bottom: 7%;">
+                @Html.DropDownList("SelectedTeacher", "All Teachers")
+                <span style="margin-left:20%;"><input style=" margin-top: 7%" type="submit" value="Filter"></span>
+            </div>
+        }
 
         @foreach (var item in Model)
         {
@@ -36,6 +34,7 @@
                 </div>
             </div>
         }
+        }
+
     </div>
 </section>
-

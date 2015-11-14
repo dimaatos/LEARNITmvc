@@ -361,6 +361,8 @@
     <Content Include="Views\Course\AdminByTeacher.cshtml" />
     <Content Include="Views\Account\Index.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Course\ByTeacher.cshtml" />
+    <Content Include="Views\Shared\_LayoutPages.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

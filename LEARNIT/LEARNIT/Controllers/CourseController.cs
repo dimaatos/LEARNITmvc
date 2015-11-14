@@ -116,6 +116,29 @@ namespace LEARNIT.Controllers
         }
 
 
+       
+        public ActionResult ByTeacher(int? SelectedTeacher)
+        {
+            var teachers = db.Teachers.OrderBy(q => q.TeacherName).ToList();
+
+
+            ViewBag.SelectedTeacher = new SelectList(teachers, "TeacherID", "TeacherName", SelectedTeacher);
+            int TeacherID = SelectedTeacher.GetValueOrDefault();
+
+            IQueryable<Course> courses = db.Courses
+                .Where(c => !SelectedTeacher.HasValue || c.TeacherId == TeacherID)
+                .OrderBy(d => d.CourseName)
+                .Include(d => d.Teacher);
+            var sql = courses.ToString();
+
+            ViewBag.Courses = db.Courses.Count();
+            ViewBag.Categories = db.Categories.Count();
+            ViewBag.Teachers = db.Teachers.Count();
+
+            return View(courses.ToList());
+        }
+
+
         [Authorize]
         public ActionResult AdminByCategory(int? SelectedCategory)
         {
