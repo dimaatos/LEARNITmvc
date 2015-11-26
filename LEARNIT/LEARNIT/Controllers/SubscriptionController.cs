@@ -22,6 +22,7 @@ namespace LEARNIT.Controllers
         }
 
         // GET: Subscription/Details/5
+        [Authorize]
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -37,6 +38,7 @@ namespace LEARNIT.Controllers
         }
 
         // GET: Subscription/Create
+        [Authorize]
         public ActionResult Create()
         {
             ViewBag.CourseID = new SelectList(db.Courses, "CourseID", "CourseName");
@@ -49,6 +51,7 @@ namespace LEARNIT.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public ActionResult Create([Bind(Include = "SubscriptionID,CourseID,SubscriberID")] Subscription subscription)
         {
             if (ModelState.IsValid)
@@ -64,6 +67,7 @@ namespace LEARNIT.Controllers
         }
 
         // GET: Subscription/Edit/5
+        [Authorize]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -85,6 +89,7 @@ namespace LEARNIT.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public ActionResult Edit([Bind(Include = "SubscriptionID,CourseID,SubscriberID")] Subscription subscription)
         {
             if (ModelState.IsValid)
@@ -99,6 +104,7 @@ namespace LEARNIT.Controllers
         }
 
         // GET: Subscription/Delete/5
+        [Authorize]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -116,6 +122,7 @@ namespace LEARNIT.Controllers
         // POST: Subscription/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public ActionResult DeleteConfirmed(int id)
         {
             Subscription subscription = db.Subscriptions.Find(id);
@@ -124,6 +131,7 @@ namespace LEARNIT.Controllers
             return RedirectToAction("Index");
         }
 
+        [Authorize]
         protected override void Dispose(bool disposing)
         {
             if (disposing)

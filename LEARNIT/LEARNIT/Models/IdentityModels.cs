@@ -21,7 +21,7 @@ namespace LEARNIT.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
+            : base("ApContext", throwIfV1Schema: false)
         {
         }
 

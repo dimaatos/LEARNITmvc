@@ -1,0 +1,22 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>Main Home Page</h1>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Link to Admin home page</h2>
+        @Html.ActionLink("Link to Admin Panel", "Index", "Home", new { area = "Administrator" }, null)
+
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-4">
+        <h2>Link to User home page</h2>
+        @Html.ActionLink("Link to User Panel", "Index", "Home", new { area = "User" }, null)
+
+    </div>
+</div>

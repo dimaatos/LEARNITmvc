@@ -318,7 +318,6 @@
     <Content Include="Views\Manage\SetPassword.cshtml" />
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
-    <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Field\Create.cshtml" />
     <Content Include="Views\Field\Delete.cshtml" />
     <Content Include="Views\Field\Details.cshtml" />
@@ -360,6 +359,10 @@
     <Content Include="Views\Course\AdminByCategory.cshtml" />
     <Content Include="Views\Course\AdminByName.cshtml" />
     <Content Include="Views\Course\AdminByTeacher.cshtml" />
+    <Content Include="Views\Account\Index.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Course\ByTeacher.cshtml" />
+    <Content Include="Views\Shared\_LayoutPages.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

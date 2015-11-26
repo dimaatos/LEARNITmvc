@@ -46,6 +46,7 @@ namespace LEARNIT.Controllers
         }
 
         // GET: Teacher/Create
+        [Authorize]
         public ActionResult Create()
         {
             ViewBag.PhotoId = new SelectList(db.Photos, "PhotoID", "PhotoName");
@@ -57,6 +58,7 @@ namespace LEARNIT.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public ActionResult Create([Bind(Include = "TeacherID,TeacherName,Education,TeacherAbout,PhotoId")] Teacher teacher)
         {
             if (ModelState.IsValid)
@@ -71,6 +73,7 @@ namespace LEARNIT.Controllers
         }
 
         // GET: Teacher/Edit/5
+        [Authorize]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -91,6 +94,7 @@ namespace LEARNIT.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public ActionResult Edit([Bind(Include = "TeacherID,TeacherName,Education,TeacherAbout,PhotoId")] Teacher teacher)
         {
             if (ModelState.IsValid)
@@ -104,6 +108,7 @@ namespace LEARNIT.Controllers
         }
 
         // GET: Teacher/Delete/5
+        [Authorize]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -119,6 +124,7 @@ namespace LEARNIT.Controllers
         }
 
         // POST: Teacher/Delete/5
+        [Authorize]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
@@ -129,6 +135,7 @@ namespace LEARNIT.Controllers
             return RedirectToAction("Index");
         }
 
+        [Authorize]
         protected override void Dispose(bool disposing)
         {
             if (disposing)
